@@ -6,17 +6,20 @@ export default function Home() {
     <main className="min-h-screen gradient-bg">
       {/* Navigation */}
       <div className="container mx-auto px-4 py-6">
-        <nav className="rounded-full backdrop-blur-lg bg-[#001f3f]/40 border border-white/5 px-6 py-4">
+        <nav className="rounded-lg backdrop-blur-lg bg-[#001f3f]/40 border border-white/5 px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="StreamlinedFlow Logo"
-                width={48}
-                height={48}
-                className="w-12 h-12 object-contain"
+                width={56}
+                height={56}
+                className="w-14 h-14 object-contain"
               />
-              <span className="text-2xl font-bold text-white">StreamlinedFlow</span>
+              <div className="flex items-center logo-text">
+                <span>Streamlined</span>
+                <span className="logo-text-highlight">Flow</span>
+              </div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#case-studies" className="nav-link">Case Studies</a>
@@ -171,6 +174,66 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid md:grid-cols-12 gap-8 mb-12">
+            {/* Logo Column */}
+            <div className="md:col-span-4 space-y-4">
+              <div className="flex items-center space-x-3">
+                <Image
+                  src="/logo.svg"
+                  alt="StreamlinedFlow Logo"
+                  width={56}
+                  height={56}
+                  className="w-14 h-14 object-contain"
+                />
+                <div className="flex items-center logo-text">
+                  <span>Streamlined</span>
+                  <span className="logo-text-highlight">Flow</span>
+                </div>
+              </div>
+              <p className="text-gray-400 text-sm mt-4">
+                Building hands-off growth systems for B2B founders.
+              </p>
+            </div>
+
+            {/* Navigation Links */}
+            <div className="md:col-span-2 md:ml-4">
+              <h3 className="font-semibold mb-4 text-white">Company</h3>
+              <div className="space-y-3">
+                <a href="#case-studies" className="block text-gray-400 hover:text-white transition-colors">Case Studies</a>
+                <a href="#how-it-works" className="block text-gray-400 hover:text-white transition-colors">How It Works</a>
+                <a href="#blog" className="block text-gray-400 hover:text-white transition-colors">Blog</a>
+                <a href="#contact" className="block text-gray-400 hover:text-white transition-colors">Contact Us</a>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div className="md:col-span-3 md:ml-4">
+              <h3 className="font-semibold mb-4 text-white">Contact</h3>
+              <div className="space-y-3 text-gray-400">
+                <p>Email: liam@streamlinedflow.com</p>
+                <p>Schedule: Book a call</p>
+              </div>
+            </div>
+
+            {/* CTA Column */}
+            <div className="md:col-span-3 md:ml-4">
+              <h3 className="font-semibold mb-4 text-white">Ready to Scale?</h3>
+              <a href="#book-call" className="btn-primary inline-block">
+                Book intro call →
+              </a>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
+            <p>© {new Date().getFullYear()} StreamlinedFlow. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

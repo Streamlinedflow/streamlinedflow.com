@@ -41,6 +41,18 @@ html {
 }
 
 @layer components {
+  .logo-text {
+    @apply text-2xl tracking-tight font-medium;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text-highlight {
+    @apply font-bold text-[#38b6ff];
+    background: linear-gradient(135deg, #38b6ff 0%, #0056D6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .gradient-text {
     @apply bg-gradient-to-r from-white to-[#38b6ff] bg-clip-text text-transparent;
   }
