@@ -259,7 +259,7 @@ export default function Home() {
                 <div key={item.step} className="card">
                   <div className="text-[#38b6ff] font-bold text-xl mb-4">{item.step}</div>
                   <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-                  <p>Scalable, affordable systems to grow your company on autopilot.</p>
+                  <p>{item.description}</p>
                 </div>
               ))}
             </div>
@@ -277,7 +277,7 @@ export default function Home() {
             <div className="flex flex-col items-center relative">
               
               <h2 className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center hover-gradient-line mx-auto">
-                Ready to Scale?
+                Ready to Automate your Business?
               </h2>
             </div>
             <p className="mb-12">
@@ -444,16 +444,14 @@ export default function Home() {
             <div className="md:col-span-3 md:ml-4">
               <h3 className="font-semibold mb-4 text-white">Contact</h3>
               <div className="space-y-3 text-gray-400">
-                <p>Email: liam@streamlinedflow.com</p>
+                <p>liam@streamlinedflow.com</p>
               </div>
             </div>
 
             {/* CTA Column */}
             <div className="md:col-span-3 md:ml-4">
-              <h3 className="font-semibold mb-4 text-white">Ready to Scale?</h3>
-              <a href="#contact" className="btn-gradient inline-block">
-                Get in touch →
-              </a>
+              <h3 className="font-semibold mb-4 text-white">Streamline your Business</h3>
+      
             </div>
           </div>
 

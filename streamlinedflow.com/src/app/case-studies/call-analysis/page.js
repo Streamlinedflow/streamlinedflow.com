@@ -161,11 +161,11 @@ export default function CaseStudy() {
             <div className="flex flex-col items-center relative">
              
               <h2 className="text-3xl md:text-4xl font-bold mb-8 gradient-text text-center hover-gradient-line mx-auto">
-                Ready to Transform Your Call Monitoring?
+                Ready to Automate your Business?
               </h2>
             </div>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how our AI solutions can help you gain valuable insights from customer conversations and improve service quality.
+             
             </p>
             <Link href="/#contact" className="btn-gradient inline-block">
               get in touch →
@@ -212,13 +212,14 @@ export default function CaseStudy() {
             <div className="md:col-span-3 md:ml-4">
               <h3 className="font-semibold mb-4 text-white">Contact</h3>
               <div className="space-y-3 text-gray-400">
-                <p>Email: liam@streamlinedflow.com</p>
+                <p>liam@streamlinedflow.com</p>
               </div>
             </div>
 
             {/* CTA Column */}
             <div className="md:col-span-3 md:ml-4">
-              <h3 className="font-semibold mb-4 text-white">Ready to Scale?</h3>
+              <h3 className="font-semibold mb-4 text-white">Streamline your Business</h3>
+              
             </div>
           </div>
 
