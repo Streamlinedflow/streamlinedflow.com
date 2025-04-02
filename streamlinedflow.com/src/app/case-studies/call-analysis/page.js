@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function CaseStudy() {
   return (
@@ -44,11 +44,11 @@ export default function CaseStudy() {
             <div className="flex flex-col items-center relative">
               
               <h1 className="text-4xl md:text-6xl font-bold mb-8 gradient-text text-center hover-gradient-line mx-auto">
-                Automated Reporting System: 20+ Hours Saved Weekly
+                AI Call Analysis System: Enhanced Quality Monitoring
               </h1>
             </div>
             <p className="text-xl text-gray-300 mb-12 text-center">
-              How we transformed a client acquisition agency's reporting process with AI automation, leading to significant time savings and improved client satisfaction.
+              How we transformed a client's call monitoring process with an AI system that transcribes calls, analyzes conversations, and provides actionable insights to management.
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function CaseStudy() {
                   
                 </h2>
                 <p className="text-xl text-gray-300 mb-12">
-                  When we started working with this agency, they were spending countless hours manually compiling client reports. Their team needed a solution that would scale.
+                  The client was struggling to monitor hundreds of daily customer service calls. Their manual review process was time-consuming and only covered a small percentage of calls.
                 </p>
 
                 <div className="space-y-12">
@@ -86,7 +86,7 @@ export default function CaseStudy() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-4">The Challenge</h3>
-                      <p className="text-gray-300">The agency was struggling with time-consuming manual processes, from gathering data across multiple sources to creating individual client reports. Their team was bogged down by repetitive tasks and faced constant challenges maintaining consistency across their reporting.</p>
+                      <p className="text-gray-300">Management had no efficient way to monitor the quality of hundreds of customer calls daily. They were spending significant time on manual reviews that only covered about 5% of all calls. This limited their ability to provide consistent feedback to call takers and identify recurring issues.</p>
                     </div>
                   </div>
 
@@ -98,7 +98,7 @@ export default function CaseStudy() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-4">The Impact</h3>
-                      <p className="text-gray-300">Their team was spending over 20 hours per week on manual reporting tasks. This not only affected their operational efficiency but also delayed valuable insights for clients, impacting overall satisfaction and growth potential.</p>
+                      <p className="text-gray-300">The lack of comprehensive call monitoring was leading to inconsistent customer service quality, missed training opportunities, and valuable customer feedback being overlooked. Staff development was hindered by the limited feedback on real customer interactions.</p>
                     </div>
                   </div>
                 </div>
@@ -115,8 +115,8 @@ export default function CaseStudy() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold mb-4">1. Target</h3>
-                        <p className="text-gray-300">We identified key performance metrics and data sources across their tech stack, creating a comprehensive data collection strategy that would serve as the foundation for automated reporting.</p>
+                        <h3 className="text-2xl font-bold mb-4">1. Capture</h3>
+                        <p className="text-gray-300">We developed an automated system that integrates with their existing call recording infrastructure, automatically capturing and securely storing call recordings for processing.</p>
                       </div>
                     </div>
 
@@ -127,8 +127,8 @@ export default function CaseStudy() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold mb-4">2. Customize</h3>
-                        <p className="text-gray-300">We developed an automated system that pulls data from their database, generates formatted reports, and organizes information in a way that's both comprehensive and easy to understand.</p>
+                        <h3 className="text-2xl font-bold mb-4">2. Analyze</h3>
+                        <p className="text-gray-300">We created a custom OpenAI assistant that transcribes the calls and performs intelligent analysis to identify key discussion points, customer sentiment, and areas for improvement.</p>
                       </div>
                     </div>
 
@@ -139,8 +139,8 @@ export default function CaseStudy() {
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold mb-4">3. Automate</h3>
-                        <p className="text-gray-300">We implemented scheduled reporting that automatically generates and sends detailed reports to their clients at specified intervals, completely eliminating the need for manual compilation and delivery.</p>
+                        <h3 className="text-2xl font-bold mb-4">3. Report</h3>
+                        <p className="text-gray-300">The system automatically generates and emails detailed reports to management, containing insights and actionable feedback that helps improve call quality and staff training.</p>
                       </div>
                     </div>
                   </div>
@@ -159,13 +159,13 @@ export default function CaseStudy() {
               </div>
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col items-center relative">
-              
+             
               <h2 className="text-3xl md:text-4xl font-bold mb-8 gradient-text text-center hover-gradient-line mx-auto">
-                Ready to Automate Your Reporting?
+                Ready to Transform Your Call Monitoring?
               </h2>
             </div>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how we can help you save time and improve client satisfaction with automated reporting systems.
+              Let's discuss how our AI solutions can help you gain valuable insights from customer conversations and improve service quality.
             </p>
             <Link href="/#contact" className="btn-gradient inline-block">
               get in touch →

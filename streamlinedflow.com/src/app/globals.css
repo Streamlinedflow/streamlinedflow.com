@@ -4,10 +4,80 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #001f3f;
-  --accent: #38b6ff;
+  /* Main color palette - Cohesive Blue Theme */
+/* Main color palette - Modern Sleek Blue Theme #000514 */
+/* Main background colors */
+/* Main background colors */
+--color-background: #f9f9fb; /* Very light grayish-blue background for a soft appearance */
+--color-box-bg: rgba(255, 255, 255, 0.95); /* Clean and light white box background with a slight transparency */
+--color-card-bg: #ffffff; /* Pure white card background for a fresh, modern look */
+--color-border: rgba(28, 101, 239, 0.15); /* Subtle blue border for focus areas */
+
+/* Accent colors - refined blue family */
+--color-accent: #3399ff; /* Soft but vibrant blue accent color */
+--color-accent-deep: #006bb3; /* Deep blue for darker accents */
+
+/* Accent backgrounds */
+--color-accent-bg: rgba(51, 153, 255, 0.1); /* Light, soft blue accent background */
+
+/* Text colors */
+--color-text-primary: #1c1c1c; /* Dark gray for primary text - better readability than pure black */
+--color-text-secondary: #1c1c1c; /* Medium gray for secondary text */
+--color-text-paragraph: #1c1c1c; /* Slightly lighter gray for paragraph text */
+
+/* Additional UI colors */
+--color-success: #3bb74a; /* Light green for success messages */
+--color-warning: #ffbf47; /* Light yellow/orange for warning messages */
+--color-error: #e04f5f; /* Coral red for error messages */
+
+/* Container widths */
+--container-width: 100%;
+--container-max-width: 1280px;
+--container-padding: 1.5rem;
+
+/* Spacing */
+--section-padding: 4rem 0; /* Adequate space for content to breathe */
+--card-padding: 1.5rem;
+
+/* Border radius */
+--border-radius-lg: 0.75rem; /* Rounded corners for a clean modern feel */
+--border-radius-md: 0.5rem;
+--border-radius-sm: 0.25rem;
+--border-radius-full: 9999px; /* For fully rounded elements */
+
+/* Heading colors */
+--color-heading-h1: #0a2540; /* Darker blue for main headings */
+--color-heading-h2: #1d2f60; /* Lighter blue for secondary headings */
+--color-heading-h3: #3399ff; /* Main blue accent for h3 */
+--color-heading-h4: #3a6db1; /* Medium blue for h4 */
+
+/* Card-specific text colors */
+--color-card-heading: #3399ff; /* Darker blue for card headings */
+--color-card-text: #1c1c1c; /* Card body text in light gray */
+--color-card-highlight: #38b6ff; 
+/* Card highlights with the main blue accent */
+--color-text-body: #e2e8f0;
+--color-text-muted: #9ca3af;
+--color-text-highlight: #38b6ff;
+
+/* Optional: Styling elements for soft backgrounds or UI elements */
+--color-soft-background: rgba(28, 101, 239, 0.05); /* Card highlight text *//* Card highlight text */ /* Card highlighted text (like "Read more") */
+
+/* Logo colors - NEW */
+--color-logo-first: #38b6ff; /* Add this for the first part of logo text */
+--color-logo-highlight: var(--color-accent); /* For the gradient part */
+
+  p {
+    color: var(--color-text-paragraph);
+  }
+  
+  /* Creating a utility class for the common paragraph style */
+  .text-paragraph {
+    color: var(--color-text-paragraph);
+  }
+  
+  /* Paragraph and body text colors */
+ 
 }
 
 @theme inline {
@@ -46,44 +116,120 @@ html {
     letter-spacing: -0.02em;
   }
 
+  .logo-text span:first-child {
+    color: var(--color-logo-first);
+  }
+
   .logo-text-highlight {
-    @apply font-bold text-[#38b6ff];
-    background: linear-gradient(135deg, #38b6ff 0%, #0056D6 100%);
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-white to-[#38b6ff] bg-clip-text text-transparent;
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
   }
   
   .btn-primary {
-    @apply px-6 py-3 rounded-lg font-semibold transition-all;
-    background: linear-gradient(135deg, #38b6ff 0%, #0056D6 100%);
-    box-shadow: 0 4px 15px rgba(56, 182, 255, 0.2);
+    @apply px-5 py-2.5 rounded-lg font-medium;
+    background-color: var(--color-accent);
+    color: white;
+    transition: all 0.3s ease;
   }
   
   .btn-primary:hover {
+    background-color: var(--color-accent-deep);
+    box-shadow: 0 6px 16px rgba(56, 182, 255, 0.35);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(56, 182, 255, 0.3);
   }
   
   .btn-outline {
-    @apply px-6 py-3 rounded-lg border border-white text-white font-semibold transition-all;
-    background: linear-gradient(135deg, rgba(56, 182, 255, 0.1) 0%, rgba(0, 31, 63, 0.1) 100%);
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
   }
   
   .btn-outline:hover {
-    background: linear-gradient(135deg, rgba(56, 182, 255, 0.2) 0%, rgba(0, 31, 63, 0.2) 100%);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    box-shadow: 0 4px 12px rgba(56, 182, 255, 0.15);
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
+    background-color: var(--color-accent-secondary);
+    color: #000; /* Dark text on bright background for readability */
+    box-shadow: 0 4px 12px rgba(240, 86, 255, 0.25);
+  }
+
+  .btn-secondary:hover {
+    box-shadow: 0 6px 16px rgba(240, 86, 255, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .btn-tertiary {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
+    background-color: var(--color-accent-tertiary);
+    color: #000; /* Dark text on bright background for readability */
+    box-shadow: 0 4px 12px rgba(54, 185, 255, 0.25);
+  }
+
+  .btn-tertiary:hover {
+    box-shadow: 0 6px 16px rgba(54, 185, 255, 0.35);
     transform: translateY(-2px);
   }
 
   .nav-link {
-    @apply text-gray-300 hover:text-white transition-colors;
+    @apply relative transition-all duration-200;
+    position: relative;
+    font-weight: bold; /* Make nav links bold */
+    font-size: 1rem; /* Match logo text size */
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover:after {
+    width: 100%;
   }
 
   .section-padding {
-    @apply py-16 px-4;
+    padding: var(--section-padding);
+  }
+
+  /* Simplified gradient button that will be more visible */
+  .btn-gradient {
+    @apply px-5 py-2.5 rounded-lg font-medium text-white;
+    background: linear-gradient(90deg, #38B6FF 0%, #0080FF 100%);
+    box-shadow: 0 4px 10px rgba(56, 182, 255, 0.25);
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(90deg, #0080FF 0%, #38B6FF 100%);
+    box-shadow: 0 6px 15px rgba(56, 182, 255, 0.35);
+    transform: translateY(-2px);
   }
 }
 
@@ -91,7 +237,241 @@ html {
   background: linear-gradient(135deg, #001f3f 0%, #000910 100%);
 }
 
+.container {
+  width: var(--container-width);
+  max-width: var(--container-max-width);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-container {
+  @apply rounded-xl backdrop-blur-lg border p-12;
+  background-color: var(--color-box-bg);
+  border-color: var(--color-border);
+  width: 100%;
+}
+
+.accent-tag {
+  @apply inline-block px-4 py-2 rounded-full mb-2;
+  background-color: var(--color-accent-bg);
+  color: var(--color-accent);
+  z-index: 10;
+}
+
+/* Add a wrapper class for section headers */
+.section-header-wrapper {
+  position: relative;
+  padding-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ensure hover-gradient-line works with centered text */
+.hover-gradient-line {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-gradient-line:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+  transition: width 0.3s ease;
+}
+
+.hover-gradient-line:hover:after {
+  width: 80%;
+}
+
+/* Card styling */
 .card {
-  @apply bg-white/5 backdrop-blur-lg rounded-xl p-6 hover:bg-white/10 transition-all;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply rounded-xl backdrop-blur-lg border p-6;
+  background-color: var(--color-card-bg);
+  border-color: var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(56, 182, 255, 0.15);
+  border-color: var(--color-accent);
+}
+
+/* Apply heading colors */
+h1 {
+  color: var(--color-heading-h1);
+}
+
+h2 {
+  color: var(--color-heading-h2);
+}
+
+h3 {
+  color: var(--color-heading-h3);
+}
+
+h4 {
+  color: var(--color-heading-h4);
+}
+
+/* Apply paragraph colors */
+p {
+  color: var(--color-text-body);
+}
+
+/* Other text elements */
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-highlight {
+  color: var(--color-text-highlight);
+}
+
+/* Card text styling */
+.card h3 {
+  color: var(--color-card-heading);
+}
+
+.card p {
+  color: var(--color-card-text);
+}
+
+.card a {
+  color: var(--color-card-highlight);
+}
+
+/* Paragraph text variations */
+.text-paragraph-light {
+  color: #c9d5e8; /* Lighter version */
+}
+
+.text-paragraph-muted {
+  color: #8897b1; /* More muted version */
+}
+
+.text-paragraph-accent {
+  color: #5bbdff; /* Accented version */
+}
+
+/* Footer company link styling to match header nav */
+.footer-company-link {
+  @apply block transition-all duration-200;
+  font-weight: bold;
+  background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+/* Optional hover effect similar to nav links */
+.footer-company-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+  transition: width 0.3s ease;
+}
+
+.footer-company-link:hover:after {
+  width: 100%;
+}
+
+/* Add these form styles to your global CSS */
+
+/* Form elements styling */
+input, textarea, select {
+  background-color: #ffffff; /* Slightly lighter than card bg but still dark */
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(56, 182, 255, 0.2);
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2338b6ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+option {
+  background-color: var(--color-card-bg);
+  color: var(--color-text-secondary);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-heading-h3);
+}
+
+/* Form container styling */
+.form-container {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+/* Form feedback messages */
+.form-success {
+  background-color: rgba(56, 182, 255, 0.1);
+  border: 1px solid rgba(56, 182, 255, 0.3);
+  color: var(--color-text-primary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-error {
+  background-color: rgba(255, 99, 99, 0.1);
+  border: 1px solid rgba(255, 99, 99, 0.3);
+  color: #ff6b6b;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Add these styles to your global CSS */
+
+/* Placeholder styling for select elements */
+select.placeholder {
+  color: var(--color-text-muted); /* Lighter grey text */
+}
+
+/* Styling for actual option values */
+select:not(.placeholder), 
+select option:not([value=""]) {
+  color: var(--color-text-primary); /* Normal text color */
+}
+
+/* Remove the standard label when using in-select placeholders */
+.select-with-placeholder label {
+  display: none;
 }
