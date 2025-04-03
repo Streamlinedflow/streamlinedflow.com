@@ -187,7 +187,7 @@ export default function Home() {
                 <Link href="/#contact" className="nav-link">Contact Us</Link>
               </div>
               <Link href="/#contact" className="btn-gradient">
-                get in touch →
+                get in touch
               </Link>
             </div>
           </nav>
@@ -204,10 +204,10 @@ export default function Home() {
             </p>
             <div className="flex justify-center gap-6">
               <Link href="/services" className="btn-gradient">
-                explore services →
+                explore services
               </Link>
               <Link href="/#case-studies" className="btn-gradient">
-                view case studies →
+                view case studies
               </Link>
             </div>
           </div>
@@ -239,7 +239,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold">Custom AI Automation systems</h3>
                   </div>
                   <p className="text-gray-300 mb-6">Scalable, affordable systems to grow your company on autopilot.</p>
-                  <Link href="/services?service=autonomous-agent" className="text-[#38b6ff] hover:underline">Read more →</Link>
+                  <Link href="/services?service=autonomous-agent" className="text-[#38b6ff] hover:underline">Read more</Link>
                 </div>
                 {/* Custom Chatbot Solutions */}
                 <div className="card cursor-pointer transition-all duration-300 transform hover:scale-105 hover:ring-2 hover:ring-[var(--color-accent-2)]">
@@ -254,7 +254,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold">Custom Chatbot Development</h3>
                   </div>
                   <p className="text-gray-300 mb-6">Enhance user engagement and streamline interactions with our custom chatbot development services.</p>
-                  <Link href="/services?service=chatbot" className="text-[#38b6ff] hover:underline">Read more →</Link>
+                  <Link href="/services?service=chatbot" className="text-[#38b6ff] hover:underline">Read more</Link>
                 </div>
               </div>
             </div>
@@ -274,30 +274,40 @@ export default function Home() {
                 </h2>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="card cursor-pointer transition-all duration-300 transform hover:scale-105 hover:ring-2 hover:ring-[var(--color-accent-2)]">
-                  <div className="mb-4">
-                    <span className="text-[#38b6ff] font-semibold">CASE STUDY</span>
+                <div className="card cursor-pointer transition-all duration-300 transform hover:scale-105 hover:ring-2 hover:ring-[var(--color-accent-2)] flex flex-col">
+                  <div>
+                    <div className="mb-4">
+                      <span className="text-[#38b6ff] font-semibold">CASE STUDY</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">Automated Reporting System</h3>
+                    <p className="text-gray-300 mb-6">See how we helped a business automate their client reporting, saving 20+ hours per week and improving client satisfaction.</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-4">Automated Reporting System</h3>
-                  <p className="text-gray-300 mb-6">See how we helped a business automate their client reporting, saving 20+ hours per week and improving client satisfaction.</p>
-                  <Link href="/case-studies/automated-reporting" className="text-[#38b6ff] hover:underline">Read more →</Link>
+                  <div className="mt-auto">
+                    <Link href="/case-studies/automated-reporting" className="text-[#38b6ff] hover:underline">Read more</Link>
+                  </div>
                 </div>
 
-                <div className="card cursor-pointer transition-all duration-300 transform hover:scale-105 hover:ring-2 hover:ring-[var(--color-accent-2)]">
-                  <div className="mb-4">
-                    <span className="text-[#38b6ff] font-semibold">CASE STUDY</span>
+                <div className="card cursor-pointer transition-all duration-300 transform hover:scale-105 hover:ring-2 hover:ring-[var(--color-accent-2)] flex flex-col">
+                  <div>
+                    <div className="mb-4">
+                      <span className="text-[#38b6ff] font-semibold">CASE STUDY</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">Call Analysis System</h3>
+                    <p className="text-gray-300 mb-6">Learn how we built an AI automation system that transcribes call recordings, analyzes conversations, and delivers management reports with actionable feedback.</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-4">Call Analysis System</h3>
-                  <p className="text-gray-300 mb-6">Learn how we built an AI automation system that transcribes call recordings, analyzes conversations, and delivers management reports with actionable feedback.</p>
-                  <Link href="/case-studies/call-analysis" className="text-[#38b6ff] hover:underline">Read more →</Link>
+                  <div className="mt-auto">
+                    <Link href="/case-studies/call-analysis" className="text-[#38b6ff] hover:underline">Read more</Link>
+                  </div>
                 </div>
 
-                <div className="card cursor-pointer transition-all duration-300 transform hover:scale-105 hover:ring-2 hover:ring-[var(--color-accent-2)] opacity-40">
-                  <div className="mb-4">
-                    <span className="text-[#38b6ff] font-semibold">COMING SOON</span>
+                <div className="card cursor-pointer transition-all duration-300 transform hover:scale-105 hover:ring-2 hover:ring-[var(--color-accent-2)] opacity-40 flex flex-col">
+                  <div>
+                    <div className="mb-4">
+                      <span className="text-[#38b6ff] font-semibold">COMING SOON</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4">Case Study</h3>
+                    <p className="text-gray-300 mb-6">New case study coming soon...</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-4">Case Study</h3>
-                  <p className="text-gray-300 mb-6">New case study coming soon...</p>
                 </div>
               </div>
             </div>
@@ -476,7 +486,7 @@ export default function Home() {
                     disabled={isSubmitting}
                     className={`btn-gradient w-full mt-6 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    {isSubmitting ? 'Submitting...' : 'Submit →'}
+                    {isSubmitting ? 'Submitting...' : 'Submit'}
                   </button>
                 </form>
               </div>

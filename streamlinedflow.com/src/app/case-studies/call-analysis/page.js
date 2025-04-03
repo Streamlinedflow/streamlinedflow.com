@@ -29,7 +29,7 @@ export default function CaseStudy() {
               <Link href="/#contact" className="nav-link">Contact Us</Link>
             </div>
             <Link href="/#contact" className="btn-gradient">
-              get in touch →
+              get in touch
             </Link>
           </div>
         </nav>
@@ -82,7 +82,7 @@ export default function CaseStudy() {
                   
                 </h2>
                 <p className="text-xl text-gray-300 mb-12">
-                  The client was struggling to monitor hundreds of daily customer service calls. Their manual review process was time-consuming and only covered a small percentage of calls.
+                  The client was struggling to monitor daily customer service calls. Their manual review process was time-consuming and only covered a small percentage of calls.
                 </p>
 
                 <div className="space-y-12">
@@ -94,7 +94,7 @@ export default function CaseStudy() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-4">The Challenge</h3>
-                      <p className="text-gray-300">Management had no efficient way to monitor the quality of hundreds of customer calls daily. They were spending significant time on manual reviews that only covered about 5% of all calls. This limited their ability to provide consistent feedback to call takers and identify recurring issues.</p>
+                      <p className="text-gray-300">Management had no efficient way to monitor the quality of customer calls daily. They were spending significant time on manual reviews. This limited their ability to provide consistent feedback to call takers and identify recurring issues.</p>
                     </div>
                   </div>
 
@@ -176,7 +176,7 @@ export default function CaseStudy() {
              
             </p>
             <Link href="/#contact" className="btn-gradient inline-block">
-              get in touch →
+              get in touch
             </Link>
           </div>
         </div>

@@ -29,7 +29,7 @@ export default function CaseStudy() {
               <Link href="/#contact" className="nav-link">Contact Us</Link>
             </div>
             <Link href="/#contact" className="btn-gradient">
-              get in touch →
+              get in touch
             </Link>
           </div>
         </nav>
@@ -43,21 +43,19 @@ export default function CaseStudy() {
               </div>
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col items-center relative">
-              
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="p-2 bg-[var(--color-background)] rounded-lg flex items-center justify-center">
-                  <div style={{ color: 'var(--color-accent-2)' }}>
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                    </svg>
-                  </div>
-                </div>
-                <h1 className="text-4xl font-bold gradient-text hover-gradient-line">Automated Reporting System</h1>
-              </div>
+              <h1 className="text-4xl md:text-6xl font-bold mb-8 gradient-text text-center hover-gradient-line mx-auto">
+                Automated Reporting System
+              </h1>
             </div>
-            <p className="text-xl text-gray-300 mb-12 text-center">
-              How we transformed a client acquisition agency's reporting process with AI automation, leading to significant time savings and improved client satisfaction.
+            <p className="text-xl text-gray-300 mb-8 text-center">
+              See how we helped a business automate their client reporting, saving 20+ hours per week and improving client satisfaction.
             </p>
+            <div className="card p-6 mb-8 text-center">
+              <p className="text-lg text-gray-300 italic">
+                "Fast work, great communication, problem understood well and solved."
+              </p>
+              <p className="text-sm text-gray-400 mt-4">- Vytas Mikulenas, Leansales.tech</p>
+            </div>
           </div>
         </div>
       </section>
@@ -176,7 +174,7 @@ export default function CaseStudy() {
               
             </p>
             <Link href="/#contact" className="btn-gradient inline-block">
-              get in touch →
+              get in touch
             </Link>
           </div>
         </div>

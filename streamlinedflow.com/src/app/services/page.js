@@ -13,47 +13,27 @@ export default function ServicesPage() {
   useEffect(() => {
     const service = searchParams.get('service');
     if (service === 'autonomous-agent') setActiveCard(0);
-    else if (service === 'enterprise-consulting') setActiveCard(1);
-    else if (service === 'chatbot') setActiveCard(2);
+    else if (service === 'chatbot') setActiveCard(1);
   }, [searchParams]);
 
   const cards = [
     {
-      title: "Autonomous Agent Development",
-      description: "Transform your business processes with intelligent automation that learns and adapts to your unique workflows.",
+      title: "Custom Agent Development",
+      description: "Transform your business processes with intelligent automations.",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
         </svg>
       ),
       features: [
-        "Natural language to SQL conversion",
-        "Complex data pipeline automation",
-        "Self-adaptive decision systems"
+        "Intelligent Decision-Making Agents",
+        "Task Automation",
+        "Seamless Integration & Scalable Efficiency"
       ],
       benefits: [
         "Reduced manual intervention",
         "24/7 operational capability",
-        "Continuous learning & improvement"
-      ]
-    },
-    {
-      title: "Enterprise Consulting",
-      description: "Strategic AI consulting to help enterprises identify, implement, and optimize automation opportunities.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      ),
-      features: [
-        "AI readiness assessment",
-        "Implementation roadmap",
-        "Process optimization"
-      ],
-      benefits: [
-        "Strategic AI adoption",
-        "Competitive advantage",
-        "ROI-focused solutions"
+        "Continuous improvement"
       ]
     },
     {
@@ -105,7 +85,7 @@ export default function ServicesPage() {
               <Link href="/#contact" className="nav-link">Contact Us</Link>
             </div>
             <Link href="/#contact" className="btn-gradient">
-              get in touch →
+              get in touch
             </Link>
           </div>
         </nav>
@@ -223,7 +203,7 @@ export default function ServicesPage() {
               Let's discuss how we can help streamline your operations with our custom solutions.
             </p>
             <Link href="/#contact" className="btn-gradient inline-block">
-              get in touch →
+              get in touch
             </Link>
           </div>
         </div>
