@@ -56,8 +56,8 @@ export default function CaseStudy() {
               </div>
             </div>
             <p className="text-xl text-gray-300 mb-12 text-center">
-              How we transformed a client's call monitoring process with an AI system that transcribes calls, analyzes conversations, and provides actionable insights to management.
-            </p>
+            How we transformed a client&rsquo;s call monitoring process with an AI system that transcribes calls, analyzes conversations, and provides actionable insights to management.
+          </p>
           </div>
         </div>
       </section>

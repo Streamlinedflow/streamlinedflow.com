@@ -198,7 +198,7 @@ export default function ServicesPage() {
               </h2>
             </div>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how we can help streamline your operations with our custom solutions.
+            Let&rsquo;s discuss how we can help streamline your operations with our custom solutions.
             </p>
             <Link href="/#contact" className="btn-gradient inline-block">
               get in touch

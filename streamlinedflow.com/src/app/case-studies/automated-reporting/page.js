@@ -134,7 +134,7 @@ export default function CaseStudy() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold mb-4">2. Customize</h3>
-                        <p className="text-gray-300">We developed an automated system that pulls data from their database, generates formatted reports, and organizes information in a way that's both comprehensive and easy to understand.</p>
+                        <p className="text-gray-300">We developed an automated system that pulls data from their database, generates formatted reports, and organizes information in a way that&rsquo;s both comprehensive and easy to understand.</p>
                       </div>
                     </div>
 
