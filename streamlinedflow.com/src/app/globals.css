@@ -4,26 +4,26 @@
 @tailwind utilities;
 
 :root {
-  /* Main color palette - Cohesive Blue Theme */
+  /* Main color palette - Cohesive Blue Theme #020617*/
 /* Main color palette - Modern Sleek Blue Theme #000514 */
 /* Main background colors */
-/* Main background colors */
---color-background: #f9f9fb; /* Very light grayish-blue background for a soft appearance */
---color-box-bg: rgba(255, 255, 255, 0.95); /* Clean and light white box background with a slight transparency */
---color-card-bg: #ffffff; /* Pure white card background for a fresh, modern look */
---color-border: rgba(28, 101, 239, 0.15); /* Subtle blue border for focus areas */
+  --color-background: #000514; /* Dark background */
+  --color-box-bg: #000514;
+  --color-card-bg: #000514;
+  --color-border: rgba(24, 116, 255, 0.15);
 
 /* Accent colors - refined blue family */
---color-accent: #3399ff; /* Soft but vibrant blue accent color */
---color-accent-deep: #006bb3; /* Deep blue for darker accents */
-
+--color-accent: #FFFFFF; /* Soft but vibrant blue accent color */
+--color-accent-deep: #FFFFFF; /* Deep blue for darker accents */
+--color-accent-2: #66b3ff; /* Lighter vibrant blue accent color */
+--color-accent-deep2: #0088e6; /* Lighter deep blue */
 /* Accent backgrounds */
 --color-accent-bg: rgba(51, 153, 255, 0.1); /* Light, soft blue accent background */
 
 /* Text colors */
---color-text-primary: #1c1c1c; /* Dark gray for primary text - better readability than pure black */
---color-text-secondary: #1c1c1c; /* Medium gray for secondary text */
---color-text-paragraph: #1c1c1c; /* Slightly lighter gray for paragraph text */
+--color-text-primary: #FFFFFF; /* Dark gray for primary text - better readability than pure black */
+--color-text-secondary: #FFFFFF; /* Medium gray for secondary text */
+--color-text-paragraph: #FFFFFF; /* Slightly lighter gray for paragraph text */
 
 /* Additional UI colors */
 --color-success: #3bb74a; /* Light green for success messages */
@@ -48,12 +48,12 @@
 /* Heading colors */
 --color-heading-h1: #0a2540; /* Darker blue for main headings */
 --color-heading-h2: #1d2f60; /* Lighter blue for secondary headings */
---color-heading-h3: #3399ff; /* Main blue accent for h3 */
---color-heading-h4: #3a6db1; /* Medium blue for h4 */
+--color-heading-h3: #FFFFFF; /* Main blue accent for h3 */
+--color-heading-h4: #FFFFFF; /* Medium blue for h4 */
 
 /* Card-specific text colors */
---color-card-heading: #3399ff; /* Darker blue for card headings */
---color-card-text: #1c1c1c; /* Card body text in light gray */
+--color-card-heading: #FFFFFF; /* Darker blue for card headings */
+--color-card-text: #FFFFFF; /* Card body text in light gray */
 --color-card-highlight: #38b6ff; 
 /* Card highlights with the main blue accent */
 --color-text-body: #e2e8f0;
@@ -81,8 +81,8 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --background: var(--color-background);
+  --color-foreground: #ffffff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -95,18 +95,19 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-background);
 }
 
 @layer base {
   body {
-    @apply bg-[#001f3f] text-white;
+    @apply bg-[#020617] text-white;
   }
 }
 
@@ -303,7 +304,7 @@ html {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px -5px rgba(56, 182, 255, 0.15);
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-deep2);
 }
 
 /* Apply heading colors */
@@ -396,7 +397,7 @@ p {
 
 /* Form elements styling */
 input, textarea, select {
-  background-color: #ffffff; /* Slightly lighter than card bg but still dark */
+  background-color: var(--color-background); /* Slightly lighter than card bg but still dark */
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
   border-radius: 0.5rem;
@@ -407,7 +408,7 @@ input, textarea, select {
 
 input:focus, textarea:focus, select:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-deep2);
   box-shadow: 0 0 0 2px rgba(56, 182, 255, 0.2);
 }
 

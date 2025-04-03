@@ -17,12 +17,13 @@ export default function CaseStudy() {
                 className="w-14 h-14 object-contain"
               />
               <div className="flex items-center logo-text">
-                <span>Streamlined</span>
-                <span className="logo-text-highlight">Flow</span>
+                <span>SL</span>
+                <span className="bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text">Flow</span>
               </div>
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/" className="nav-link">Home</Link>
+              <Link href="/services" className="nav-link">Services</Link>
               <Link href="/#case-studies" className="nav-link">Case Studies</Link>
               <Link href="/#how-it-works" className="nav-link">How It Works</Link>
               <Link href="/#contact" className="nav-link">Contact Us</Link>
@@ -38,14 +39,21 @@ export default function CaseStudy() {
       <section className="container mx-auto section-padding">
         <div className="section-container">
         <div className="accent-tag">
-                <span className="font-semibold">CASE STUDY</span>
+                <span className="font-semibold" style={{ color: 'var(--color-accent-2)' }}>CASE STUDY</span>
               </div>
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col items-center relative">
               
-              <h1 className="text-4xl md:text-6xl font-bold mb-8 gradient-text text-center hover-gradient-line mx-auto">
-                AI Call Analysis System: Enhanced Quality Monitoring
-              </h1>
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="p-2 bg-[var(--color-background)] rounded-lg flex items-center justify-center">
+                  <div style={{ color: 'var(--color-accent-2)' }}>
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                    </svg>
+                  </div>
+                </div>
+                <h1 className="text-4xl font-bold gradient-text hover-gradient-line">Call Analysis System</h1>
+              </div>
             </div>
             <p className="text-xl text-gray-300 mb-12 text-center">
               How we transformed a client's call monitoring process with an AI system that transcribes calls, analyzes conversations, and provides actionable insights to management.
@@ -60,7 +68,7 @@ export default function CaseStudy() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center relative">
               <div className="accent-tag absolute left-0 top-0">
-                <span className="font-semibold">OUR APPROACH</span>
+                <span className="font-semibold" style={{ color: 'var(--color-accent-2)' }}>OUR APPROACH</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-12 gradient-text text-center hover-gradient-line mx-auto">
                 The Challenge & Solution
@@ -79,8 +87,8 @@ export default function CaseStudy() {
 
                 <div className="space-y-12">
                   <div className="flex items-start space-x-6 min-h-[200px]">
-                    <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }} className="p-4 rounded-lg shrink-0">
-                      <svg className="w-8 h-8" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                      <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                     </div>
@@ -91,8 +99,8 @@ export default function CaseStudy() {
                   </div>
 
                   <div className="flex items-start space-x-6 min-h-[200px]">
-                    <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }} className="p-4 rounded-lg shrink-0">
-                      <svg className="w-8 h-8" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                      <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
@@ -106,11 +114,11 @@ export default function CaseStudy() {
 
               {/* Right Column - Solution Steps */}
               <div className="relative">
-                <div style={{ backgroundColor: 'var(--color-card-bg)', borderColor: 'var(--color-border)' }} className="rounded-xl p-8 border h-full">
+                <div style={{ backgroundColor: 'var(--color-card-bg)', borderColor: 'var(--color-border)' }} className="rounded-xl p-8 border h-full hover:ring-2 hover:ring-[var(--color-accent-2)]">
                   <div className="space-y-12">
                     <div className="flex items-start space-x-6 min-h-[200px]">
-                      <div style={{ backgroundColor: 'var(--color-accent-bg)' }} className="p-4 rounded-full shrink-0">
-                        <svg className="w-8 h-8" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                        <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                         </svg>
                       </div>
@@ -121,8 +129,8 @@ export default function CaseStudy() {
                     </div>
 
                     <div className="flex items-start space-x-6 min-h-[200px]">
-                      <div style={{ backgroundColor: 'var(--color-accent-bg)' }} className="p-4 rounded-full shrink-0">
-                        <svg className="w-8 h-8" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                        <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                         </svg>
                       </div>
@@ -133,8 +141,8 @@ export default function CaseStudy() {
                     </div>
 
                     <div className="flex items-start space-x-6 min-h-[200px]">
-                      <div style={{ backgroundColor: 'var(--color-accent-bg)' }} className="p-4 rounded-full shrink-0">
-                        <svg className="w-8 h-8" style={{ color: 'var(--color-accent)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                        <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
@@ -155,7 +163,7 @@ export default function CaseStudy() {
       <section className="container mx-auto section-padding">
         <div className="section-container">
         <div className="accent-tag">
-                <span className="font-semibold">NEXT STEPS</span>
+                <span className="font-semibold" style={{ color: 'var(--color-accent-2)' }}>NEXT STEPS</span>
               </div>
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex flex-col items-center relative">
@@ -190,7 +198,7 @@ export default function CaseStudy() {
                 />
                 <div className="flex items-center logo-text">
                   <span>SL</span>
-                  <span className="logo-text-highlight">Flow</span>
+                  <span className="bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text">Flow</span>
                 </div>
               </Link>
               <p className="text-gray-400 text-sm mt-4">
@@ -198,10 +206,11 @@ export default function CaseStudy() {
               </p>
             </div>
 
-            {/* Navigation Links - Updated with new class */}
+            {/* Navigation Links */}
             <div className="md:col-span-2 md:ml-4">
               <h3 className="font-semibold mb-4 text-white">Company</h3>
               <div className="space-y-3">
+                <Link href="/services" className="footer-company-link">Services</Link>
                 <Link href="/#case-studies" className="footer-company-link">Case Studies</Link>
                 <Link href="/#how-it-works" className="footer-company-link">How It Works</Link>
                 <Link href="/#contact" className="footer-company-link">Contact Us</Link>
