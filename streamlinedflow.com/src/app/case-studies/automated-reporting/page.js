@@ -52,7 +52,7 @@ export default function CaseStudy() {
             </p>
             <div className="card p-6 mb-8 text-center">
               <p className="text-lg text-gray-300 italic">
-                "Fast work, great communication, problem understood well and solved."
+                &ldquo;Fast work, great communication, problem understood well and solved.&rdquo;
               </p>
               <p className="text-sm text-gray-400 mt-4">- Vytas Mikulenas, Leansales.tech</p>
             </div>
@@ -170,9 +170,7 @@ export default function CaseStudy() {
                 Ready to Automate Your Business?
               </h2>
             </div>
-            <p className="text-xl text-gray-300 mb-8">
-              
-            </p>
+            <p className="text-xl text-gray-300 mb-6">We&apos;ll walk you through our process and discuss your needs.</p>
             <Link href="/#contact" className="btn-gradient inline-block">
               get in touch
             </Link>

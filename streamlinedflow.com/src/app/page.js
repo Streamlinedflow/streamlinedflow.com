@@ -369,7 +369,7 @@ export default function Home() {
                 </h2>
               </div>
               <p className="mb-12">
-                Send us a message briefly detailing your business needs and let's discuss how we can help automate your business growth.
+                Send us a message briefly detailing your business needs and let&apos;s discuss how we can help automate your business growth.
               </p>
               <div className="form-container max-w-2xl mx-auto">
                 {submitStatus.success === true ? (

@@ -172,9 +172,7 @@ export default function CaseStudy() {
                 Ready to Automate your Business?
               </h2>
             </div>
-            <p className="text-xl text-gray-300 mb-8">
-             
-            </p>
+            <p className="text-gray-300 mb-6">We&apos;ll walk you through our process and discuss your needs.</p>
             <Link href="/#contact" className="btn-gradient inline-block">
               get in touch
             </Link>

@@ -103,9 +103,7 @@ export default function ServicesPage() {
                 Our Services
               </h1>
             </div>
-            <p className="text-xl text-gray-300 mb-12 text-center">
-              Discover how we can help transform your business with cutting-edge AI solutions.
-            </p>
+            <p className="text-xl text-gray-300 mb-12 text-center">We&apos;ll help you transform your business with cutting-edge AI solutions.</p>
           </div>
         </div>
       </section>
