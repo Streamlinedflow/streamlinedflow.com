@@ -103,6 +103,4 @@ export function ServiceDetails({ card }) {
       </div>
     </div>
   );
-}
-
-export default ServiceCardGrid; 
+} 

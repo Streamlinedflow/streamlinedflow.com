@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import AnimatedBackground from '@/components/AnimatedBackground';
-import ServiceCardGrid from '@/components/ServiceCard';
+import { ServiceCardGrid } from '@/components/ServiceCard';
 
 export default function ServicesPage() {
   const cards = [
