@@ -54,7 +54,7 @@ export default function CaseStudy() {
                 </h1>
               </div>
               <p className="text-xl text-gray-300 mb-8 text-center">
-                See how we helped a business automate their client reporting, saving 20+ hours per week and improving client satisfaction.
+                See how we helped a business automate their client reporting, saving an estimate of 10+ hours per week and improving client satisfaction.
               </p>
               <div className="card p-6 mb-8 text-center ring-2 ring-[var(--color-accent-2)]">
                 <p className="text-lg text-gray-300 italic">
