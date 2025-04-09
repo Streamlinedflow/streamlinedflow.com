@@ -3,8 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
 import { motion } from 'framer-motion';
+import ThemeToggle from '@/components/ThemeToggle';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function CaseStudy() {
+  const { isDarkMode } = useTheme();
   return (
     <main className="min-h-screen" style={{ backgroundColor: 'var(--color-background)' }}>
       {/* Navigation */}
@@ -32,9 +35,12 @@ export default function CaseStudy() {
                 <Link href="/#how-it-works" className="nav-link">How It Works</Link>
                 <Link href="/#contact" className="nav-link">Contact Us</Link>
               </div>
-              <Link href="/#contact" className="btn-gradient">
-                get in touch
-              </Link>
+              <div className="flex items-center space-x-4">
+                <Link href="/#book-call" className="btn-gradient">
+                  book a call
+                </Link>
+                <ThemeToggle />
+              </div>
             </div>
           </nav>
         </div>
@@ -93,7 +99,7 @@ export default function CaseStudy() {
 
                   <div className="space-y-12">
                     <div className="flex items-start space-x-6 min-h-[200px]">
-                      <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                      <div className="p-4 rounded-lg shrink-0 flex items-center justify-center">
                         <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
@@ -105,7 +111,7 @@ export default function CaseStudy() {
                     </div>
 
                     <div className="flex items-start space-x-6 min-h-[200px]">
-                      <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                      <div className="p-4 rounded-lg shrink-0 flex items-center justify-center">
                         <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
@@ -123,7 +129,7 @@ export default function CaseStudy() {
                   <div style={{ backgroundColor: 'var(--color-card-bg)', borderColor: 'var(--color-border)' }} className="rounded-xl p-8 border h-full hover:ring-2 hover:ring-[var(--color-accent-2)]">
                     <div className="space-y-12">
                       <div className="flex items-start space-x-6 min-h-[200px]">
-                        <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                        <div className="p-4 rounded-lg shrink-0 flex items-center justify-center">
                           <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                           </svg>
@@ -135,7 +141,7 @@ export default function CaseStudy() {
                       </div>
 
                       <div className="flex items-start space-x-6 min-h-[200px]">
-                        <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                        <div className="p-4 rounded-lg shrink-0 flex items-center justify-center">
                           <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                           </svg>
@@ -147,7 +153,7 @@ export default function CaseStudy() {
                       </div>
 
                       <div className="flex items-start space-x-6 min-h-[200px]">
-                        <div className="p-4 bg-[var(--color-background)] rounded-lg shrink-0 flex items-center justify-center">
+                        <div className="p-4 rounded-lg shrink-0 flex items-center justify-center">
                           <svg className="w-8 h-8" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -181,8 +187,8 @@ export default function CaseStudy() {
                 </h2>
               </div>
               <p className="text-xl text-gray-300 mb-6">We&apos;ll walk you through our process and discuss your needs.</p>
-              <Link href="/#contact" className="btn-gradient inline-block">
-                get in touch
+              <Link href="/#book-call" className="btn-gradient inline-block">
+                book a call
               </Link>
             </div>
           </div>

@@ -3,308 +3,190 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Main color palette - Cohesive Blue Theme #020617*/
-/* Main color palette - Modern Sleek Blue Theme #000514 */
-/* Main background colors */
-  --color-background: #000514; /* Dark background */
-  --color-box-bg: #000514;
-  --color-card-bg: #000514;
+/* Dark theme (default) */
+:root[data-theme="dark"] {
+  /* Main background colors */
+  --color-background: #050505;
+  --color-box-bg: #0A0A0A;
+  --color-card-bg: #0A0A0A;
   --color-border: rgba(24, 116, 255, 0.15);
 
-/* Accent colors - refined blue family */
---color-accent: #FFFFFF; /* Soft but vibrant blue accent color */
---color-accent-deep: #FFFFFF; /* Deep blue for darker accents */
---color-accent-2: #66b3ff; /* Lighter vibrant blue accent color */
---color-accent-deep2: #0088e6; /* Lighter deep blue */
-/* Accent backgrounds */
---color-accent-bg: rgba(51, 153, 255, 0.1); /* Light, soft blue accent background */
-
-/* Text colors */
---color-text-primary: #FFFFFF; /* Dark gray for primary text - better readability than pure black */
---color-text-secondary: #FFFFFF; /* Medium gray for secondary text */
---color-text-paragraph: #FFFFFF; /* Slightly lighter gray for paragraph text */
-
-/* Additional UI colors */
---color-success: #3bb74a; /* Light green for success messages */
---color-warning: #ffbf47; /* Light yellow/orange for warning messages */
---color-error: #e04f5f; /* Coral red for error messages */
-
-/* Container widths */
---container-width: 100%;
---container-max-width: 1280px;
---container-padding: 1.5rem;
-
-/* Spacing */
---section-padding: 4rem 0; /* Adequate space for content to breathe */
---card-padding: 1.5rem;
-
-/* Border radius */
---border-radius-lg: 0.75rem; /* Rounded corners for a clean modern feel */
---border-radius-md: 0.5rem;
---border-radius-sm: 0.25rem;
---border-radius-full: 9999px; /* For fully rounded elements */
-
-/* Heading colors */
---color-heading-h1: #0a2540; /* Darker blue for main headings */
---color-heading-h2: #1d2f60; /* Lighter blue for secondary headings */
---color-heading-h3: #FFFFFF; /* Main blue accent for h3 */
---color-heading-h4: #FFFFFF; /* Medium blue for h4 */
-
-/* Card-specific text colors */
---color-card-heading: #FFFFFF; /* Darker blue for card headings */
---color-card-text: #FFFFFF; /* Card body text in light gray */
---color-card-highlight: #38b6ff; 
-/* Card highlights with the main blue accent */
---color-text-body: #e2e8f0;
---color-text-muted: #9ca3af;
---color-text-highlight: #38b6ff;
-
-/* Optional: Styling elements for soft backgrounds or UI elements */
---color-soft-background: rgba(28, 101, 239, 0.05); /* Card highlight text *//* Card highlight text */ /* Card highlighted text (like "Read more") */
-
-/* Logo colors - NEW */
---color-logo-first: #38b6ff; /* Add this for the first part of logo text */
---color-logo-highlight: var(--color-accent); /* For the gradient part */
-
-  p {
-    color: var(--color-text-paragraph);
-  }
+  /* Text colors */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #f0f0f0;
+  --color-text-paragraph: #e5e5e5;
   
-  /* Creating a utility class for the common paragraph style */
-  .text-paragraph {
-    color: var(--color-text-paragraph);
-  }
+  /* Card colors */
+  --color-card-heading: #FFFFFF;
+  --color-card-text: #e0e0e0;
+  --color-heading-h1: #ffffff;
+  --color-heading-h2: #f0f0f0;
+  --color-heading-h3: #FFFFFF;
+  --color-heading-h4: #FFFFFF;
   
-  /* Paragraph and body text colors */
- 
+  /* Accent colors - same in both themes */
+  --color-accent: #38b6ff;
+  --color-accent-deep: #0066cc;
+  --color-accent-2: #66b3ff;
+  --color-accent-deep2: #0088e6;
+  --color-accent-bg: rgba(56, 182, 255, 0.1);
+  
+  /* Additional UI colors */
+  --color-success: #3bb74a;
+  --color-warning: #ffbf47;
+  --color-error: #e04f5f;
 }
 
-@theme inline {
-  --background: var(--color-background);
-  --color-foreground: #ffffff;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Light theme */
+:root[data-theme="light"] {
+  /* Main background colors */
+  --color-background: #ffffff;
+  --color-box-bg: #f5f5f5;
+  --color-card-bg: #f9f9f9;
+  --color-border: #e5e5e5;
+
+  /* Text colors */
+  --color-text-primary: #050505;
+  --color-text-secondary: #333333;
+  --color-text-paragraph: #555555;
+  
+  /* Card colors */
+  --color-card-heading: #1a1a1a;
+  --color-card-text: #333333;
+  --color-heading-h1: #0a2540;
+  --color-heading-h2: #1d2f60;
+  --color-heading-h3: #333333;
+  --color-heading-h4: #444444;
+  
+  /* Accent colors - same in both themes */
+  --color-accent: #38b6ff;
+  --color-accent-deep: #0066cc;
+  --color-accent-2: #66b3ff;
+  --color-accent-deep2: #0088e6;
+  --color-accent-bg: rgba(56, 182, 255, 0.1);
+  
+  /* Additional UI colors */
+  --color-success: #3bb74a;
+  --color-warning: #ffbf47;
+  --color-error: #e04f5f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Default to dark theme */
+:root {
+  /* Default dark theme colors */
+  --color-background: #050505;
+  --color-box-bg: #0A0A0A;
+  --color-card-bg: #0A0A0A;
+  --color-border: rgba(24, 116, 255, 0.15);
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #f0f0f0;
+  --color-text-paragraph: #e5e5e5;
+  --color-card-heading: #FFFFFF;
+  --color-card-text: #e0e0e0;
+  --color-heading-h1: #ffffff;
+  --color-heading-h2: #f0f0f0;
+  --color-heading-h3: #FFFFFF;
+  --color-heading-h4: #FFFFFF;
+  
+  /* Other variables */
+  --container-width: 100%;
+  --container-max-width: 1280px;
+  --container-padding: 1.5rem;
+  --section-padding: 4rem 0;
+  --card-padding: 1.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-sm: 0.25rem;
+  --border-radius-full: 9999px;
+  --color-logo-first: #38b6ff;
+  --color-logo-highlight: var(--color-accent);
+  --color-text-body: var(--color-text-paragraph);
+  --color-text-muted: #9ca3af;
+  --color-text-highlight: #38b6ff;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-box-bg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(56, 182, 255, 0.25);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
   scroll-behavior: smooth;
   background-color: var(--color-background);
+  transition: background-color 0.3s ease;
 }
 
 @layer base {
   body {
-    @apply bg-[#020617] text-white;
-  }
-}
-
-@layer components {
-  .logo-text {
-    @apply text-2xl tracking-tight font-medium;
-    letter-spacing: -0.02em;
-  }
-
-  .logo-text span:first-child {
-    color: var(--color-logo-first);
-  }
-
-  .logo-text-highlight {
-    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-
-  .gradient-text {
-    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    @apply text-white;
+    background-color: var(--color-background);
   }
   
-  .btn-primary {
-    @apply px-5 py-2.5 rounded-lg font-medium;
-    background-color: var(--color-accent);
-    color: white;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-primary:hover {
-    background-color: var(--color-accent-deep);
-    box-shadow: 0 6px 16px rgba(56, 182, 255, 0.35);
-    transform: translateY(-2px);
-  }
-  
-  .btn-outline {
-    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
-    background-color: transparent;
-    border: 1px solid var(--color-border);
-    color: var(--color-text-primary);
-  }
-  
-  .btn-outline:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    box-shadow: 0 4px 12px rgba(56, 182, 255, 0.15);
-  }
-
-  .btn-secondary {
-    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
-    background-color: var(--color-accent-secondary);
-    color: #000; /* Dark text on bright background for readability */
-    box-shadow: 0 4px 12px rgba(240, 86, 255, 0.25);
-  }
-
-  .btn-secondary:hover {
-    box-shadow: 0 6px 16px rgba(240, 86, 255, 0.35);
-    transform: translateY(-2px);
-  }
-
-  .btn-tertiary {
-    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
-    background-color: var(--color-accent-tertiary);
-    color: #000; /* Dark text on bright background for readability */
-    box-shadow: 0 4px 12px rgba(54, 185, 255, 0.25);
-  }
-
-  .btn-tertiary:hover {
-    box-shadow: 0 6px 16px rgba(54, 185, 255, 0.35);
-    transform: translateY(-2px);
-  }
-
-  .nav-link {
-    @apply relative transition-all duration-200;
-    position: relative;
-    font-weight: bold; /* Make nav links bold */
-    font-size: 1rem; /* Match logo text size */
-    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-
-  .nav-link:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
-    transition: width 0.3s ease;
-  }
-
-  .nav-link:hover:after {
-    width: 100%;
-  }
-
-  .section-padding {
-    padding: var(--section-padding);
-  }
-
-  /* Simplified gradient button that will be more visible */
-  .btn-gradient {
-    @apply px-5 py-2.5 rounded-lg font-medium text-white;
-    background: linear-gradient(90deg, #38B6FF 0%, #0080FF 100%);
-    box-shadow: 0 4px 10px rgba(56, 182, 255, 0.25);
-    transition: all 0.3s ease;
-    border: none;
-  }
-
-  .btn-gradient:hover {
-    background: linear-gradient(90deg, #0080FF 0%, #38B6FF 100%);
-    box-shadow: 0 6px 15px rgba(56, 182, 255, 0.35);
-    transform: translateY(-2px);
+  /* Replace light-theme reference with data attribute selector */
+  :root[data-theme="light"] body {
+    @apply text-black;
   }
 }
 
-.gradient-bg {
-  background: linear-gradient(135deg, #001f3f 0%, #000910 100%);
+/* Text color controls for both themes - replace class references with data attributes */
+:root[data-theme="light"] .text-gray-300,
+:root[data-theme="light"] .text-gray-400 {
+  color: #555555 !important;
 }
 
-.container {
-  width: var(--container-width);
-  max-width: var(--container-max-width);
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
-  margin-left: auto;
-  margin-right: auto;
+:root[data-theme="light"] .card p {
+  color: var(--color-card-text) !important;
 }
 
-.section-container {
-  @apply rounded-xl backdrop-blur-lg border p-12;
-  background-color: var(--color-box-bg);
-  border-color: var(--color-border);
-  width: 100%;
+:root[data-theme="light"] h1, 
+:root[data-theme="light"] h2,
+:root[data-theme="light"] h3,
+:root[data-theme="light"] h4 {
+  color: var(--color-heading-h1) !important;
 }
 
-.accent-tag {
-  @apply inline-block px-4 py-2 rounded-full mb-2;
-  background-color: var(--color-accent-bg);
-  color: var(--color-accent);
-  z-index: 10;
+/* Make sure form elements adapt to theme */
+:root[data-theme="light"] input, 
+:root[data-theme="light"] textarea, 
+:root[data-theme="light"] select {
+  background-color: #f5f5f5;
+  color: #333333;
+  border-color: #e0e0e0;
 }
 
-/* Add a wrapper class for section headers */
-.section-header-wrapper {
-  position: relative;
-  padding-top: 2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Ensure hover-gradient-line works with centered text */
-.hover-gradient-line {
-  position: relative;
-  display: inline-block;
-}
-
-.hover-gradient-line:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
-  transition: width 0.3s ease;
-}
-
-.hover-gradient-line:hover:after {
-  width: 80%;
-}
-
-/* Card styling */
-.card {
-  @apply rounded-xl backdrop-blur-lg border p-6;
+:root[data-theme="light"] .form-container {
   background-color: var(--color-card-bg);
   border-color: var(--color-border);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(56, 182, 255, 0.15);
-  border-color: var(--color-accent-deep2);
 }
 
 /* Apply heading colors */
@@ -550,4 +432,203 @@ select option:not([value=""]) {
   .mobile-menu-open {
     overflow: hidden;
   }
+}
+
+/* Add back component styles that were removed */
+@layer components {
+  .logo-text {
+    @apply text-2xl tracking-tight font-medium;
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text span:first-child {
+    color: var(--color-logo-first);
+  }
+
+  .logo-text-highlight {
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    padding: 0.1em 0; /* Add vertical padding to prevent cut-off */
+    display: inline-block; /* Ensure the element takes the full space of the text */
+  }
+  
+  .btn-primary {
+    @apply px-5 py-2.5 rounded-lg font-medium;
+    background-color: var(--color-accent);
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-accent-deep);
+    box-shadow: 0 6px 16px rgba(56, 182, 255, 0.35);
+    transform: translateY(-2px);
+  }
+  
+  .btn-outline {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+  }
+  
+  .btn-outline:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    box-shadow: 0 4px 12px rgba(56, 182, 255, 0.15);
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
+    background-color: var(--color-accent-secondary);
+    color: #000; /* Dark text on bright background for readability */
+    box-shadow: 0 4px 12px rgba(240, 86, 255, 0.25);
+  }
+
+  .btn-secondary:hover {
+    box-shadow: 0 6px 16px rgba(240, 86, 255, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .btn-tertiary {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
+    background-color: var(--color-accent-tertiary);
+    color: #000; /* Dark text on bright background for readability */
+    box-shadow: 0 4px 12px rgba(54, 185, 255, 0.25);
+  }
+
+  .btn-tertiary:hover {
+    box-shadow: 0 6px 16px rgba(54, 185, 255, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .nav-link {
+    @apply relative transition-all duration-200;
+    position: relative;
+    font-weight: bold; /* Make nav links bold */
+    font-size: 1rem; /* Match logo text size */
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover:after {
+    width: 100%;
+  }
+
+  .section-padding {
+    padding: var(--section-padding);
+  }
+
+  /* Simplified gradient button that will be more visible */
+  .btn-gradient {
+    @apply px-5 py-2.5 rounded-lg font-medium text-white;
+    background: linear-gradient(90deg, #38B6FF 0%, #0080FF 100%);
+    box-shadow: 0 4px 10px rgba(56, 182, 255, 0.25);
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(90deg, #0080FF 0%, #38B6FF 100%);
+    box-shadow: 0 6px 15px rgba(56, 182, 255, 0.35);
+    transform: translateY(-2px);
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #001f3f 0%, #000910 100%);
+}
+
+.container {
+  width: var(--container-width);
+  max-width: var(--container-max-width);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-container {
+  @apply rounded-xl backdrop-blur-lg border p-12;
+  background-color: var(--color-box-bg);
+  border-color: var(--color-border);
+  width: 100%;
+}
+
+.accent-tag {
+  @apply inline-block px-4 py-2 rounded-full mb-2;
+  background-color: var(--color-accent-bg);
+  color: var(--color-accent);
+  z-index: 10;
+}
+
+/* Add a wrapper class for section headers */
+.section-header-wrapper {
+  position: relative;
+  padding-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ensure hover-gradient-line works with centered text */
+.hover-gradient-line {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-gradient-line:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, var(--color-accent), var(--color-accent-deep));
+  transition: width 0.3s ease;
+}
+
+.hover-gradient-line:hover:after {
+  width: 80%;
+}
+
+/* Card styling */
+.card {
+  @apply rounded-xl backdrop-blur-lg border p-6;
+  background-color: var(--color-card-bg);
+  border-color: var(--color-border);
+  transition: all 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(56, 182, 255, 0.15);
+  border-color: var(--color-accent-deep2);
 }

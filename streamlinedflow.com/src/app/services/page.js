@@ -5,8 +5,11 @@ import { Suspense } from 'react';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import { ServiceCardGrid } from '@/components/ServiceCard';
 import AnimatedSection from '@/components/AnimatedSection';
+import ThemeToggle from '@/components/ThemeToggle';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function ServicesPage() {
+  const { isDarkMode } = useTheme();
   const cards = [
     {
       title: "Custom Agent Development",
@@ -76,9 +79,12 @@ export default function ServicesPage() {
                 <Link href="/#how-it-works" className="nav-link">How It Works</Link>
                 <Link href="/#contact" className="nav-link">Contact Us</Link>
               </div>
-              <Link href="/#contact" className="btn-gradient">
-                get in touch
-              </Link>
+              <div className="flex items-center space-x-4">
+                <Link href="/#book-call" className="btn-gradient">
+                  book a call
+                </Link>
+                <ThemeToggle />
+              </div>
             </div>
           </nav>
         </div>
@@ -132,8 +138,8 @@ export default function ServicesPage() {
               <p className="text-xl text-gray-300 mb-8">
               Let&rsquo;s discuss how we can help streamline your operations with our custom solutions.
               </p>
-              <Link href="/#contact" className="btn-gradient inline-block">
-                get in touch
+              <Link href="/#book-call" className="btn-gradient inline-block">
+                book a call
               </Link>
             </div>
           </div>

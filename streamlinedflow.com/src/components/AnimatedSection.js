@@ -55,8 +55,8 @@ export default function AnimatedSection({
       animate={scrollTriggered ? (inView ? "visible" : "hidden") : "visible"}
       variants={animation}
       transition={{ 
-        duration: 0.5, 
-        delay: scrollTriggered ? 0.1 : delay,
+        duration: scrollTriggered ? 0.8 : 0.5, 
+        delay: scrollTriggered ? 0.2 : delay,
         ease: "easeOut"
       }}
       className={className}

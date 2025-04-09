@@ -16,16 +16,18 @@ export function ServiceCardGrid({ cards }) {
   return (
     <>
       {/* Service Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {cards.map((card, index) => (
-          <ServiceCard
-            key={index}
-            card={card}
-            index={index}
-            isActive={activeCard === index}
-            onClick={() => setActiveCard(index)}
-          />
-        ))}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16 max-w-4xl">
+          {cards.map((card, index) => (
+            <ServiceCard
+              key={index}
+              card={card}
+              index={index}
+              isActive={activeCard === index}
+              onClick={() => setActiveCard(index)}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Selected Service Details */}
@@ -43,7 +45,7 @@ function ServiceCard({ card, index, isActive, onClick }) {
       onClick={onClick}
     >
       <div className="flex items-center space-x-4 mb-4">
-        <div className="p-2 bg-[var(--color-background)] rounded-lg flex items-center justify-center">
+        <div className="p-2 rounded-lg flex items-center justify-center">
           <div style={{ color: 'var(--color-accent-2)' }}>
             {card.icon}
           </div>
@@ -59,7 +61,7 @@ export function ServiceDetails({ card }) {
   return (
     <div className="card p-8 bg-opacity-50 backdrop-blur-sm">
       <div className="flex items-center space-x-4 mb-6">
-        <div className="p-2 bg-[var(--color-background)] rounded-lg flex items-center justify-center">
+        <div className="p-2 rounded-lg flex items-center justify-center">
           <div style={{ color: 'var(--color-accent-2)' }}>
             {card.icon}
           </div>
@@ -74,7 +76,7 @@ export function ServiceDetails({ card }) {
           <ul className="space-y-3">
             {card.features.map((feature, index) => (
               <li key={index} className="flex items-center space-x-3">
-                <div className="p-1 bg-[var(--color-background)] rounded-full flex items-center justify-center">
+                <div className="p-1 rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
@@ -90,7 +92,7 @@ export function ServiceDetails({ card }) {
           <ul className="space-y-3">
             {card.benefits.map((benefit, index) => (
               <li key={index} className="flex items-center space-x-3">
-                <div className="p-1 bg-[var(--color-background)] rounded-full flex items-center justify-center">
+                <div className="p-1 rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5 flex-shrink-0" style={{ color: 'var(--color-accent-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>

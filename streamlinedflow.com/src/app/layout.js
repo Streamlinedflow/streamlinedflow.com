@@ -1,21 +1,21 @@
-import { Space_Grotesk } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/context/ThemeContext';
 
-const spaceGrotesk = Space_Grotesk({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'StreamlinedFlow - B2B Growth Systems',
-  description: 'We build hands-off growth systems for B2B founders. Automate your lead acquisition and scale your business to 8 figures.',
+  title: 'StreamlinedFlow - Custom AI Automated Solutions',
+  description: 'We help businesses automate workflows and save time with custom AI solutions.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={spaceGrotesk.className}>
-        {children}
+      <body className={inter.className}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <script type="text/javascript" dangerouslySetInnerHTML={{ __html: `
           (function(d, t) {
             var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
