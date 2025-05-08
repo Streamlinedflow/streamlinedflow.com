@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +18,7 @@
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #f0f0f0;
   --color-text-paragraph: #e5e5e5;
-  
+
   /* Card colors */
   --color-card-heading: #FFFFFF;
   --color-card-text: #e0e0e0;
@@ -23,14 +26,14 @@
   --color-heading-h2: #f0f0f0;
   --color-heading-h3: #FFFFFF;
   --color-heading-h4: #FFFFFF;
-  
+
   /* Accent colors - same in both themes */
   --color-accent: #38b6ff;
   --color-accent-deep: #0066cc;
   --color-accent-2: #66b3ff;
   --color-accent-deep2: #0088e6;
   --color-accent-bg: rgba(56, 182, 255, 0.1);
-  
+
   /* Additional UI colors */
   --color-success: #3bb74a;
   --color-warning: #ffbf47;
@@ -49,7 +52,7 @@
   --color-text-primary: #050505;
   --color-text-secondary: #333333;
   --color-text-paragraph: #555555;
-  
+
   /* Card colors */
   --color-card-heading: #1a1a1a;
   --color-card-text: #333333;
@@ -57,14 +60,14 @@
   --color-heading-h2: #1d2f60;
   --color-heading-h3: #333333;
   --color-heading-h4: #444444;
-  
+
   /* Accent colors - same in both themes */
   --color-accent: #38b6ff;
   --color-accent-deep: #0066cc;
   --color-accent-2: #66b3ff;
   --color-accent-deep2: #0088e6;
   --color-accent-bg: rgba(56, 182, 255, 0.1);
-  
+
   /* Additional UI colors */
   --color-success: #3bb74a;
   --color-warning: #ffbf47;
@@ -87,7 +90,7 @@
   --color-heading-h2: #f0f0f0;
   --color-heading-h3: #FFFFFF;
   --color-heading-h4: #FFFFFF;
-  
+
   /* Other variables */
   --container-width: 100%;
   --container-max-width: 1280px;
@@ -103,6 +106,38 @@
   --color-text-body: var(--color-text-paragraph);
   --color-text-muted: #9ca3af;
   --color-text-highlight: #38b6ff;
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 /* Theme toggle button */
@@ -136,7 +171,6 @@
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
-  font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -151,7 +185,7 @@ html {
     @apply text-white;
     background-color: var(--color-background);
   }
-  
+
   /* Replace light-theme reference with data attribute selector */
   :root[data-theme="light"] body {
     @apply text-black;
@@ -370,12 +404,12 @@ select option:not([value=""]) {
     padding: 0.75rem 1rem;
     min-height: 44px; /* Apple's recommended minimum touch target size */
   }
-  
+
   /* Adjust card spacing for mobile */
   .card {
     padding: 1.25rem;
   }
-  
+
   /* Improve form elements for touch */
   input, 
   select, 
@@ -384,28 +418,28 @@ select option:not([value=""]) {
     padding: 0.75rem 1rem;
     min-height: 44px;
   }
-  
+
   /* Adjust section padding for mobile */
   .section-padding {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-  
+
   /* Improve button spacing */
   .flex-col.sm\:flex-row {
     gap: 0.75rem;
   }
-  
+
   /* Adjust grid gaps */
   .grid {
     gap: 1rem;
   }
-  
+
   /* Improve footer spacing */
   footer .grid {
     gap: 2rem;
   }
-  
+
   /* Make sure all interactive elements have sufficient touch area */
   a, button, [role="button"] {
     min-height: 44px;
@@ -414,12 +448,12 @@ select option:not([value=""]) {
     align-items: center;
     justify-content: center;
   }
-  
+
   /* Improve form container spacing */
   .form-container {
     padding: 1.5rem;
   }
-  
+
   /* Adjust accent tag position for mobile */
   .accent-tag {
     position: relative;
@@ -427,7 +461,7 @@ select option:not([value=""]) {
     left: 0;
     margin-bottom: 1rem;
   }
-  
+
   /* Improve mobile menu animation */
   .mobile-menu-open {
     overflow: hidden;
@@ -462,27 +496,27 @@ select option:not([value=""]) {
     padding: 0.1em 0; /* Add vertical padding to prevent cut-off */
     display: inline-block; /* Ensure the element takes the full space of the text */
   }
-  
+
   .btn-primary {
     @apply px-5 py-2.5 rounded-lg font-medium;
     background-color: var(--color-accent);
     color: white;
     transition: all 0.3s ease;
   }
-  
+
   .btn-primary:hover {
     background-color: var(--color-accent-deep);
     box-shadow: 0 6px 16px rgba(56, 182, 255, 0.35);
     transform: translateY(-2px);
   }
-  
+
   .btn-outline {
     @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
     background-color: transparent;
     border: 1px solid var(--color-border);
     color: var(--color-text-primary);
   }
-  
+
   .btn-outline:hover {
     border-color: var(--color-accent);
     color: var(--color-accent);
@@ -631,4 +665,85 @@ select option:not([value=""]) {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px -5px rgba(56, 182, 255, 0.15);
   border-color: var(--color-accent-deep2);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
