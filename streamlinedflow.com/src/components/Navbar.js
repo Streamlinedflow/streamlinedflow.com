@@ -24,8 +24,8 @@ const links = [
 export default function Navbar() {
   return (
     <AnimatedSection delay={0} type="fadeIn">
-      <div className="container mx-auto px-4">
-        <nav className="section-container relative py-2 flex items-center justify-center lg:justify-between">
+      <div className="w-full px-2 sm:px-4 pt-2">
+        <nav className="relative py-4 flex items-center justify-center lg:justify-between p-4 max-w-screen-xl mx-auto">
           {/* Mobile Sheet Trigger */}
           <Sheet>
             <SheetTrigger asChild>
@@ -36,8 +36,11 @@ export default function Navbar() {
                 <Menu size={30} />
               </button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-3/4 max-w-xs p-0 dark:bg-background-dark">
-              <SheetHeader className="p-6 border-b flex justify-center">
+            <SheetContent
+              side="left"
+              className="w-3/4 max-w-xs p-0 bg-gray-100 dark:bg-gray-900 border-l border-gray-200 dark:border-blue-500/15"
+            >
+              <SheetHeader className="p-6 border-b border-gray-200 dark:border-blue-500/15 flex justify-center">
                 <SheetTitle>
                   <Link href="/" className="flex items-center space-x-2">
                     <Image
@@ -47,7 +50,7 @@ export default function Navbar() {
                       height={48}
                       className="w-12 h-12"
                     />
-                    <span className="text-lg font-bold">SL Flow</span>
+                    <span className="text-lg font-bold text-gray-900 dark:text-white">SL Flow</span>
                   </Link>
                 </SheetTitle>
               </SheetHeader>
@@ -56,14 +59,14 @@ export default function Navbar() {
                   <Link
                     key={href}
                     href={href}
-                    className="text-base font-medium nav-link"
+                    className="relative font-bold text-base bg-gradient-to-r from-[#38b6ff] to-[#0066cc] bg-clip-text text-transparent hover:underline underline-offset-4"
                   >
                     {label}
                   </Link>
                 ))}
                 <Link
                   href="/#book-call"
-                  className="btn-gradient w-full text-center py-2"
+                  className="px-5 py-2.5 rounded-lg font-medium text-white bg-gradient-to-r from-[#38b6ff] to-[#0080ff] shadow hover:from-[#0080ff] hover:to-[#38b6ff] transition-all w-full text-center"
                 >
                   Book a Call
                 </Link>
@@ -77,7 +80,7 @@ export default function Navbar() {
           </div>
 
           {/* Logo Left on desktop, Center on md/sm */}
-          <Link href="/" className="flex-shrink-0 flex items-center  md:space-x-2">
+          <Link href="/" className="flex-shrink-0 flex items-center md:space-x-2">
             <Image
               src="/logo.svg"
               alt="SL Flow Logo"
@@ -85,8 +88,8 @@ export default function Navbar() {
               height={56}
               className="w-12 h-12 object-contain"
             />
-            <div className="text-2xl lg:text-xl font-bold logo-text">
-              <span>SL</span>
+            <div className="text-2xl lg:text-xl font-bold">
+              <span className="text-[#38b6ff]">SL</span>
               <span className="bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text">
                 Flow
               </span>
@@ -99,7 +102,7 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className="nav-link hover:text-blue-600"
+                className="relative font-bold text-base bg-gradient-to-r from-[#38b6ff] to-[#0066cc] bg-clip-text text-transparent hover:underline underline-offset-4"
               >
                 {label}
               </Link>
@@ -108,9 +111,12 @@ export default function Navbar() {
 
           {/* Actions Right on desktop */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button asChild>
-              <Link href="/#book-call" className="btn-gradient">Book a Call</Link>
-            </Button>
+            <Link
+              href="/#book-call"
+              className="px-5 py-2.5 rounded-lg font-medium text-white bg-gradient-to-r from-[#38b6ff] to-[#0080ff] shadow hover:from-[#0080ff] hover:to-[#38b6ff] transition-all"
+            >
+              Book a Call
+            </Link>
             <ThemeToggle />
           </div>
         </nav>

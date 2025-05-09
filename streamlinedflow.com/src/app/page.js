@@ -193,10 +193,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main
-      className="min-h-screen"
-      style={{ backgroundColor: "var(--color-background)" }}
-    >
+    <main className="midn-h-screen bg-gray-50 text-gray-900 dark:bg-neutral-950 dark:text-gray-50">
       <AnimatedBackground />
       {/* Background Canvas */}
       <canvas
@@ -208,13 +205,13 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-10">
         <Navbar />
-        <Hero/>
-        <Services/>
-        <CaseStudies/>
-        <HowItWorks/>
-        <BookCall/>
-        <ContactForm/>
-        <Footer/>
+        <Hero />
+        <Services />
+        <CaseStudies />
+        <HowItWorks />
+        <BookCall />
+        <ContactForm />
+        <Footer />
       </div>
     </main>
   );
