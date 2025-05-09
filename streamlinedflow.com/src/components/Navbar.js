@@ -31,12 +31,12 @@ export default function Navbar() {
             <SheetTrigger asChild>
               <button
                 aria-label="Open menu"
-                className="lg:hidden absolute left-4 p-2 focus:outline-none"
+                className="lg:hidden absolute left-2 p-2 focus:outline-none"
               >
                 <Menu size={30} />
               </button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-3/4 max-w-xs p-0">
+            <SheetContent side="left" className="w-3/4 max-w-xs p-0 dark:bg-background-dark">
               <SheetHeader className="p-6 border-b flex justify-center">
                 <SheetTitle>
                   <Link href="/" className="flex items-center space-x-2">
@@ -72,12 +72,12 @@ export default function Navbar() {
           </Sheet>
 
           {/* Mobile Theme Toggle */}
-          <div className="lg:hidden absolute right-4 p-2">
+          <div className="md:hidden absolute right-2 p-2 hide-theme-toggle-xs">
             <ThemeToggle />
           </div>
 
           {/* Logo Left on desktop, Center on md/sm */}
-          <Link href="/" className="flex-shrink-0 flex items-center space-x-2">
+          <Link href="/" className="flex-shrink-0 flex items-center  md:space-x-2">
             <Image
               src="/logo.svg"
               alt="SL Flow Logo"
@@ -85,7 +85,7 @@ export default function Navbar() {
               height={56}
               className="w-12 h-12 object-contain"
             />
-            <div className="text-3xl lg:text-xl font-bold logo-text">
+            <div className="text-2xl lg:text-xl font-bold logo-text">
               <span>SL</span>
               <span className="bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text">
                 Flow
@@ -109,7 +109,7 @@ export default function Navbar() {
           {/* Actions Right on desktop */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button asChild>
-              <Link href="/#book-call">Book a Call</Link>
+              <Link href="/#book-call" className="btn-gradient">Book a Call</Link>
             </Button>
             <ThemeToggle />
           </div>

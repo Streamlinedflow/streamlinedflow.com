@@ -747,3 +747,9 @@ select option:not([value=""]) {
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 320px) {
+  .hide-theme-toggle-xs {
+    display: none;
+  }
+}
