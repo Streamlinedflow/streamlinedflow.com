@@ -197,8 +197,6 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100 text-gray-950 dark:bg-zinc-950 dark:text-gray-50">
       <Navbar /> {/* Navbar now includes <header> and sticky logic */}
       <main>
-        <AnimatedBackground />
-
         <div className="relative z-0">
           <canvas
            // id="waveCanvas"

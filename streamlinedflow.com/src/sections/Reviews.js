@@ -59,13 +59,13 @@ const ReviewsCarousel = () => {
 
   return (
     <section className="container mx-auto py-16 px-4 bg-slate-100 dark:bg-transparent relative">
-      <div className="rounded-xl backdrop-blur-lg p-12 w-full overflow-hidden relative">
-        <h2 className="text-4xl md:text-5xl mb-12 text-start text-gray-900 dark:text-white leading-tight">
-          What Our Clients Say
+      <div className="rounded-xl backdrop-blur-lg p-12 w-full relative">
+        <h2 className="text-xl md:text-3xl mb-6 text-center text-gray-900 dark:text-white leading-tight">
+         Real Voices, Real Results 
         </h2>
         <div className="relative">
           {/* Carousel */}
-          <div className="overflow-hidden relative" ref={emblaRef}>
+          <div className="overflow-hidden relative pt-6 pb-10" ref={emblaRef}>
             <div className="flex">
               {reviews.map((review, index) => {
                 const isActive = index === activeIndex;

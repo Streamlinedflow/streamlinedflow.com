@@ -38,7 +38,7 @@ const CaseStudies = () => {
                   href={caseStudy.isComingSoon ? "#" : caseStudy.href}
                   className={`block ${caseStudy.isComingSoon ? "opacity-50 pointer-events-none" : ""}`}
                 >
-                  <div className="rounded-xl backdrop-blur-lg border-2 border-transparent bg-slate-100 dark:bg-gray-900/50 bg-clip-padding p-6 flex flex-col h-full cursor-pointer transition-transform duration-300 transform hover:scale-105 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/20 group">
+                  <div className="rounded-xl backdrop-blur-lg border-2 border-transparent bg-white dark:bg-zinc-900 bg-clip-padding p-6 flex flex-col h-full cursor-pointer transition delay-150 duration-400 transform hover:scale-105 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/20   group">
                     <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white relative inline-block">
                       {caseStudy.title}
                       <span className="block h-1 w-12 bg-gradient-to-r from-sky-500 to-blue-600 mt-2 rounded-full"></span>
