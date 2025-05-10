@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "@/context/ThemeContext";
 
 import AnimatedBackground from "@/components/AnimatedBackground";
+import ReviewCarousel from "@/sections/Reviews";
 import Hero from "@/sections/Hero";
 import Services from "@/sections/Services";
 import CaseStudies from "@/sections/CaseStudies";
@@ -205,6 +206,7 @@ export default function Home() {
            // style={{ opacity: 0.9 }}
           />
           <Hero />
+          <ReviewCarousel />
           <Services />
           <CaseStudies />
           <HowItWorks />
