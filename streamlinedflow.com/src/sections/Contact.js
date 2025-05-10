@@ -64,9 +64,8 @@ const ContactForm = () => {
       >
         <div className="rounded-xl backdrop-blur-lg p-12 w-full">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl mb-4 text-start text-gray-900 dark:text-white leading-tight relative inline-block">
+            <h2 className="text-4xl md:text-5xl mb-12 text-center text-gray-900 dark:text-white leading-tight relative">
               Contact Us
-              <span className="block h-1 w-12 bg-gradient-to-r from-sky-500 to-blue-600 mt-4 rounded-full"></span>
             </h2>
 
             <div className="rounded-xl backdrop-blur-lg border-2 border-transparent bg-white dark:bg-zinc-900 bg-clip-padding p-6 flex flex-col">

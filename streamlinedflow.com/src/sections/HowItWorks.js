@@ -30,9 +30,8 @@ const HowItWorks = () => {
       >
         <div className="rounded-xl backdrop-blur-lg p-12 w-full">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl mb-16 text-start text-gray-900 dark:text-white leading-tight relative">
-              How We Deliver 
-              <span className="block h-1 w-16 bg-gradient-to-r from-sky-500 to-blue-600 mt-4 rounded-full"></span>
+            <h2 className="text-4xl md:text-5xl mb-16 text-center text-gray-900 dark:text-white leading-tight relative">
+              How We Deliver
             </h2>
 
             <div className="flex flex-col gap-12">

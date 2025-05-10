@@ -55,7 +55,7 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent
                 side="left"
-                className="w-3/4 max-w-xs p-0 bg-gray-100 dark:bg-gray-900 border-l border-gray-200 dark:border-blue-500/15 [&>button]:text-black dark:[&>button]:text-white"
+                className="w-3/4 max-w-xs p-0 bg-gray-100 dark:bg-zinc-900 border-l border-gray-200 dark:border-blue-500/15 [&>button]:text-black dark:[&>button]:text-white"
               >
                 <SheetHeader className="p-6 border-b border-gray-200 dark:border-blue-500/15 flex justify-center">
                   <SheetTitle>

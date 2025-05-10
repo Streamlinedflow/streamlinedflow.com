@@ -28,7 +28,7 @@ const CaseStudies = () => {
       <section id="case-studies" className="container mx-auto py-16 px-4 bg-slate-100 dark:bg-transparent relative">
         <div className="rounded-xl backdrop-blur-lg p-12 w-full">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl mb-12 text-start text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl mb-12 text-center text-gray-900 dark:text-white leading-tight">
               Case Studies
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
