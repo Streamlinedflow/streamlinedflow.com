@@ -2,7 +2,7 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // Using Lucide icons (shadcn-ready)
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
   {
@@ -57,64 +57,83 @@ const ReviewsCarousel = () => {
   const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
-  return (
-    <section className="container mx-auto py-16 px-4 bg-slate-100 dark:bg-transparent relative">
-      <div className="rounded-xl backdrop-blur-lg p-12 w-full relative">
-        <h2 className="text-xl md:text-3xl mb-6 text-center text-gray-900 dark:text-white leading-tight">
-         Real Voices, Real Results 
-        </h2>
-        <div className="relative">
-          {/* Carousel */}
-          <div className="overflow-hidden relative pt-6 pb-10" ref={emblaRef}>
-            <div className="flex">
-              {reviews.map((review, index) => {
-                const isActive = index === activeIndex;
-                return (
+ return (
+    <>
+      {/* ─── 1️⃣ HEADING + BLUR ─────────────────────────────── */}
+      <section className="container mx-auto pt-16 pb-12 px-4 relative z-0">
+        <div className="rounded-xl backdrop-blur-lg p-6 md:p-12 w-full">
+          <h2 className="text-xl md:text-3xl text-center text-gray-900 dark:text-white leading-tight">
+            Real Voices, Real Results
+          </h2>
+        </div>
+      </section>
+
+      {/* ─── 2️⃣ CAROUSEL OUTSIDE BLUR, FLOATING ABOVE WAVE ──── */}
+      <section
+        className="container mx-auto px-4 -mt-12 md:-mt-16 relative z-20"
+      >
+        <div className="overflow-hidden relative pt-3 pb-10" ref={emblaRef}>
+          <div className="flex">
+            {reviews.map((review, i) => {
+              const isActive = i === activeIndex;
+              return (
+                <div
+                  key={i}
+                  className="min-w-full md:min-w-[33.3333%] px-4 flex justify-center"
+                >
                   <div
-                    key={index}
-                    className="min-w-0 flex-[0_0_100%] md:flex-[0_0_33.333%] pl-4 flex justify-center isolation-auto"
-                  >
-                    <div
-                      className={`rounded-xl backdrop-blur-lg border-2 border-transparent bg-white dark:bg-zinc-900 bg-clip-padding p-6 flex flex-col h-full w-full max-w-sm transition-transform duration-500 ${
+                    className={`rounded-xl backdrop-blur-lg border-2 border-transparent
+                      bg-white dark:bg-zinc-900 p-6 flex flex-col w-full max-w-sm
+                      transition-transform duration-500 ${
                         isActive
-                          ? "scale-105 border-blue-400 shadow-lg shadow-blue-400/20 opacity-100 z-10"
-                          : "scale-90 opacity-60 z-0"
+                          ? "scale-100 md:scale-105 border-blue-400 shadow-lg opacity-100"
+                          : "scale-100 md:scale-90 opacity-60"
                       }`}
-                    >
-                      <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white relative inline-block">
-                        {review.name}
-                        <span className="block h-1 w-12 bg-gradient-to-r from-sky-500 to-blue-600 mt-2 rounded-full"></span>
-                      </h3>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base">
-                        {review.review}
-                      </p>
-                    </div>
+                  >
+                    <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+                      {review.name}
+                      <span className="block h-1 w-12 bg-gradient-to-r from-sky-500 to-blue-600 mt-2 rounded-full"></span>
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+                      {review.review}
+                    </p>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
+        </div>
 
-          {/* Left Button */}
-          <button
-            onClick={scrollPrev}
-            className="absolute top-1/2 -translate-y-1/2 left-0 bg-white/40 dark:bg-zinc-800/40 border border-gray-300 dark:border-gray-700 p-2 rounded-full shadow-sm hover:ring-2 hover:ring-blue-400/50 transition-all backdrop-blur-sm"
-            aria-label="Previous"
-          >
-            <ChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+        {/* Arrows (desktop) */}
+        <button
+          onClick={scrollPrev}
+          className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0
+                     bg-white/40 dark:bg-zinc-800/40 border p-2 rounded-full z-20"
+          aria-label="Prev"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={scrollNext}
+          className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-0
+                     bg-white/40 dark:bg-zinc-800/40 border p-2 rounded-full z-20"
+          aria-label="Next"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
+        {/* Arrows (mobile) */}
+        <div className="flex md:hidden justify-center gap-4 z-20">
+          <button onClick={scrollPrev} className="p-2 rounded-full bg-white/40 dark:bg-zinc-800/40">
+            <ChevronLeft className="w-5 h-5" />
           </button>
-
-          <button
-            onClick={scrollNext}
-            className="absolute top-1/2 -translate-y-1/2 right-0 bg-white/40 dark:bg-zinc-800/40 border border-gray-300 dark:border-gray-700 p-2 rounded-full shadow-sm hover:ring-2 hover:ring-blue-400/50 transition-all backdrop-blur-sm"
-            aria-label="Next"
-          >
-            <ChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+          <button onClick={scrollNext} className="p-2 rounded-full bg-white/40 dark:bg-zinc-800/40">
+            <ChevronRight className="w-5 h-5" />
           </button>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
-};
+} 
 
 export default ReviewsCarousel;

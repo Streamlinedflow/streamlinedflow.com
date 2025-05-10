@@ -6,7 +6,7 @@ import AnimatedSection from './AnimatedSection';
 const Footer = () => {
   return (
     <AnimatedSection delay={0.2} type="fadeIn" scrollTriggered={true}>
-      <footer className="border-t border-gray-200 dark:border-blue-500/15">
+      <footer className="border-t border-gray-200 dark:border-zinc-300/15">
         <div className="container mx-auto px-4 py-12">
           <div className="grid md:grid-cols-12 gap-8 mb-12">
             {/* Logo Column */}
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="pt-8 border-t border-gray-200 dark:border-blue-500/15 text-center text-gray-600 dark:text-gray-400 text-sm">
+          <div className="pt-8 border-t border-gray-200 dark:border-zinc-300/15 text-center text-gray-600 dark:text-gray-400 text-sm">
             <p>© {new Date().getFullYear()} StreamlinedFlow. All rights reserved.</p>
           </div>
         </div>
