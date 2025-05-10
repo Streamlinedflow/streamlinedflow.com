@@ -58,19 +58,18 @@ const ContactForm = () => {
 
   return (
     <AnimatedSection delay={0.2} type="fadeUp" scrollTriggered={true}>
-      <section id="contact" className="container mx-auto py-16 px-4">
-        <div className="rounded-xl backdrop-blur-lg border bg-gray-100 dark:bg-gray-900 border-gray-200 dark:border-blue-500/15 p-12 w-full">
-          <div className="inline-block px-4 py-2 rounded-full mb-2 bg-blue-100 dark:bg-blue-900 text-blue-500 font-semibold">
-            CONTACT US
-          </div>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text hover:underline underline-offset-8">
-              Message us
+      <section id="contact" className="container mx-auto py-16 px-4 bg-slate-100 dark:bg-transparent relative">
+        <div className="rounded-xl backdrop-blur-lg p-12 w-full">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl mb-6 text-start text-gray-900 dark:text-white leading-tight relative inline-block">
+              Contact Us
+              <span className="block h-1 w-12 bg-gradient-to-r from-sky-500 to-blue-600 mt-4 rounded-full"></span>
             </h2>
-            <p className="mb-12 text-gray-600 dark:text-gray-300">
-              Send us a message briefly detailing your business needs and let's discuss how we can help automate your business growth.
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base mb-8 max-w-2xl">
+              Send us a message detailing your business needs, and we’ll get back to you to discuss how we can help automate your workflows.
             </p>
-            <div className="rounded-lg border bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-blue-500/15 p-8 max-w-2xl mx-auto">
+
+            <div className="rounded-lg border-2 border-transparent bg-slate-100 dark:bg-gray-900/50 bg-clip-padding p-8">
               {submitStatus.success === true && (
                 <div className="bg-blue-50 border border-blue-200 text-blue-800 p-4 rounded-lg mb-6 text-left">
                   {submitStatus.message}
@@ -110,7 +109,7 @@ const ContactForm = () => {
                     name="role"
                     value={formData.role}
                     onChange={handleChange}
-                    placeholder="Enter role"
+                    placeholder="Role"
                     className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-blue-500/15 text-gray-900 dark:text-gray-200 rounded-md px-4 py-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                   <input
@@ -118,7 +117,7 @@ const ContactForm = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    placeholder="Enter company name"
+                    placeholder="Company"
                     className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-blue-500/15 text-gray-900 dark:text-gray-200 rounded-md px-4 py-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   />
                 </div>

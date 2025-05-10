@@ -36,8 +36,8 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/70 dark:bg-neutral-950/70 backdrop-blur-md shadow-sm"
-          : "bg-white dark:bg-neutral-950"
+          ? "bg-gray-100/70 dark:bg-zinc-950/70 backdrop-blur-md shadow-sm"
+          : "bg-gray-100 dark:bg-zinc-950"
       }`}
     >
       <AnimatedSection delay={0} type="fadeIn">
@@ -55,7 +55,7 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent
                 side="left"
-                className="w-3/4 max-w-xs p-0 bg-gray-100 dark:bg-gray-900 border-l border-gray-200 dark:border-blue-500/15"
+                className="w-3/4 max-w-xs p-0 bg-gray-100 dark:bg-gray-900 border-l border-gray-200 dark:border-blue-500/15 [&>button]:text-black dark:[&>button]:text-white"
               >
                 <SheetHeader className="p-6 border-b border-gray-200 dark:border-blue-500/15 flex justify-center">
                   <SheetTitle>
@@ -78,7 +78,7 @@ export default function Navbar() {
                     <Link
                       key={href}
                       href={href}
-                      className="relative font-bold text-base bg-gradient-to-r from-[#38b6ff] to-[#0066cc] bg-clip-text text-transparent hover:underline underline-offset-4"
+                      className="relative font-bold text-base dark:text-white hover:underline underline-offset-4"
                     >
                       {label}
                     </Link>

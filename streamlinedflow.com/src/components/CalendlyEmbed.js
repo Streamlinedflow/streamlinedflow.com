@@ -71,7 +71,7 @@ export default function CalendlyEmbed() {
   }, [themeVersion, calendlyUrl]);
 
   return (
-    <div className="calendly-container rounded-xl overflow-hidden border border-[var(--color-border)]">
+    <div className="relative w-full">
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-opacity-75 bg-[var(--color-box-bg)] z-10">
           <div className="text-center">
@@ -87,4 +87,4 @@ export default function CalendlyEmbed() {
       />
     </div>
   );
-} 
+}

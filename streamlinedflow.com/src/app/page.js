@@ -193,16 +193,17 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 dark:bg-neutral-950 dark:text-gray-50">
+    <div className="min-h-screen bg-gray-100 text-gray-950 dark:bg-zinc-950 dark:text-gray-50">
       <Navbar /> {/* Navbar now includes <header> and sticky logic */}
-      <main >
+      <main>
         <AnimatedBackground />
-        <canvas
-          id="waveCanvas"
-          className="fixed top-0 left-0 w-full h-full pointer-events-none"
-          style={{ opacity: 0.9 }}
-        />
-        <div className="relative z-10">
+
+        <div className="relative z-0">
+          <canvas
+           // id="waveCanvas"
+           //className="fixed top-0 left-0 w-full h-full pointer-events-none z-20"
+           // style={{ opacity: 0.9 }}
+          />
           <Hero />
           <Services />
           <CaseStudies />
