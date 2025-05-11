@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import AnimatedSection from './AnimatedSection';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import AnimatedSection from "./AnimatedSection";
 
 const Footer = () => {
   return (
@@ -21,7 +21,9 @@ const Footer = () => {
                 />
                 <div className="flex items-center text-2xl tracking-tight font-medium">
                   <span className="text-[#38b6ff]">SL</span>
-                  <span className="bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text">Flow</span>
+                  <span className="bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text">
+                    Flow
+                  </span>
                 </div>
               </Link>
               <p className="text-gray-600 dark:text-gray-400 text-sm mt-4">
@@ -31,18 +33,32 @@ const Footer = () => {
 
             {/* Navigation Links */}
             <div className="md:col-span-2 md:ml-4">
-              <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Company</h3>
-              <div className="space-y-3">
-                <Link href="/services" className="block font-semibold bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text hover:underline">
+              <h3 className="font-semibold mb-4 text-gray-900 dark:text-white border-b-1 inline-block pb-1">
+                Company
+              </h3>
+              <div className="space-y-2">
+                <Link
+                  href="/services"
+                  className="block text-sm text-gray-700 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                >
                   Services
                 </Link>
-                <Link href="/#case-studies" className="block font-semibold bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text hover:underline">
+                <Link
+                  href="/#case-studies"
+                  className="block text-sm text-gray-700 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                >
                   Case Studies
                 </Link>
-                <Link href="/#how-it-works" className="block font-semibold bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text hover:underline">
+                <Link
+                  href="/#how-it-works"
+                  className="block text-sm text-gray-700 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                >
                   How It Works
                 </Link>
-                <Link href="/#contact" className="block font-semibold bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text hover:underline">
+                <Link
+                  href="/#contact"
+                  className="block text-sm text-gray-700 dark:text-gray-400 hover:text-blue-500 transition-colors"
+                >
                   Contact Us
                 </Link>
               </div>
@@ -50,24 +66,29 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="md:col-span-3 md:ml-4">
-              <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Contact</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-400">
-                <p>liam@streamlinedflow.com</p>
+              <h3 className="font-semibold mb-4 text-gray-900 dark:text-white border-b-1 inline-block pb-1">
+                Contact
+              </h3>
+              <div className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                <a href="mailto:liam@streamlinedflow.com">
+                  liam@streamlinedflow.com
+                </a>
               </div>
             </div>
 
             {/* CTA Column */}
             <div className="md:col-span-3 md:ml-4">
-              <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">
-                Streamline your Business
+              <h3 className="font-semibold mb-4 text-gray-900 dark:text-white border-b-1 inline-block pb-1">
+                Streamline Your Business
               </h3>
-              {/* Optional: add a call-to-action here later */}
             </div>
           </div>
 
           {/* Copyright */}
           <div className="pt-8 border-t border-gray-200 dark:border-zinc-300/15 text-center text-gray-600 dark:text-gray-400 text-sm">
-            <p>© {new Date().getFullYear()} StreamlinedFlow. All rights reserved.</p>
+            <p>
+              © {new Date().getFullYear()} StreamlinedFlow. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
