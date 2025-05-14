@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import AnimatedSection from "./AnimatedSection";
+import AnimatedSection from "../common/AnimatedSection";
 
 const Footer = () => {
   return (

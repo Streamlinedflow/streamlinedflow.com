@@ -1,8 +1,8 @@
 "use client"
 import Link from 'next/link';
 import Image from 'next/image';
-import AnimatedSection from '@/components/AnimatedSection';
-import ThemeToggle from '@/components/ThemeToggle';
+import AnimatedSection from '@/components/common/AnimatedSection';
+import ThemeToggle from '@/components/common/ThemeToggle';
 import { useTheme } from '@/context/ThemeContext';
 
 export default function CaseStudy() {

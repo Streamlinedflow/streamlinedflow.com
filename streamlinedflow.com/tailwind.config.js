@@ -5,11 +5,12 @@ export default {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/sections/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/features/**/*.{js,ts,jsx,tsx,mdx}',
     // You can adjust the paths as needed
   ],
   theme: {
     extend: {
-      // (optional) add custom theme here
+      
     },
   },
   plugins: [],

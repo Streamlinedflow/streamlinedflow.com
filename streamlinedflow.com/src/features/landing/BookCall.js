@@ -1,5 +1,5 @@
-import AnimatedSection from "@/components/AnimatedSection";
-import CalendlyEmbed from "@/components/CalendlyEmbed";
+import AnimatedSection from "@/components/common/AnimatedSection";
+import CalendlyEmbed from "@/components/common/CalendlyEmbed";
 
 const BookCall = () => {
   return (

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedSection from "@/components/common/AnimatedSection";
 
 const Services = () => {
   return (

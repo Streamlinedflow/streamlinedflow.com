@@ -2,16 +2,16 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "@/context/ThemeContext";
 
-import AnimatedBackground from "@/components/AnimatedBackground";
-import ReviewCarousel from "@/sections/Reviews";
-import Hero from "@/sections/Hero";
-import Services from "@/sections/Services";
-import CaseStudies from "@/sections/CaseStudies";
-import HowItWorks from "@/sections/HowItWorks";
-import BookCall from "@/sections/BookCall";
-import ContactForm from "@/sections/Contact";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import AnimatedBackground from "@/components/common/AnimatedBackground";
+import ReviewCarousel from "@/features/landing/Reviews";
+import Hero from "@/features/landing/Hero";
+import Services from "@/features/landing/Services";
+import CaseStudies from "@/features/landing/CaseStudies";
+import HowItWorks from "@/features/landing/HowItWorks";
+import BookCall from "@/features/landing/BookCall";
+import ContactForm from "@/features/landing/Contact";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 export default function Home() {
   const { isDarkMode } = useTheme();
@@ -156,8 +156,8 @@ export default function Home() {
       ctx.clearRect(0, 0, rect.width, rect.height);
 
       // Two intersecting waves in the middle
-      drawWave(rect.height * 0.5, 40, 0.003, 0.7, 0.15); // First wave
-      drawWave(rect.height * 0.5, 35, 0.004, -0.5, 0.15); // Second wave going the opposite direction
+      drawWave(rect.height * 0.5, 40, 0.003, 0.7, 0.22); // First wave
+      drawWave(rect.height * 0.5, 35, 0.004, -0.5, 0.22); // Second wave going the opposite direction
 
       time += 0.015;
       animationFrameId = requestAnimationFrame(animate);

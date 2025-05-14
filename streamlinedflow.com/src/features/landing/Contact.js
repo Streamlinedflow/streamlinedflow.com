@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedSection from "@/components/common/AnimatedSection";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({

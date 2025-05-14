@@ -1,4 +1,4 @@
-import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedSection from "@/components/common/AnimatedSection";
 
 const steps = [
   {

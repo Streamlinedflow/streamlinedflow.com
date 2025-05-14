@@ -6,16 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
   {
-    name: "Alice Johnson",
-    review:
-      "This AI system has completely transformed the way we work. Highly recommend to anyone looking to streamline their business processes.",
-  },
-  {
-    name: "Bob Smith",
-    review:
-      "Fantastic experience! The chatbot we integrated has boosted customer engagement and saved us hours of manual work.",
-  },
-  {
     name: "Charlie Davis",
     review:
       "Our automated reporting system now runs flawlessly, saving us time and improving accuracy across the board.",
@@ -24,6 +14,11 @@ const reviews = [
     name: "Danielle Brown",
     review:
       "Superb team and great support. The AI automation was easy to implement and made a measurable impact within weeks.",
+  },
+  {
+    name: "Ethan Wilson",
+    review:
+      "A sleek, modern solution that’s elevated our client communications and reporting to the next level.",
   },
   {
     name: "Ethan Wilson",
@@ -57,7 +52,7 @@ const ReviewsCarousel = () => {
   const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
- return (
+  return (
     <>
       {/* ─── 1️⃣ HEADING + BLUR ─────────────────────────────── */}
       <section className="container mx-auto pt-16 pb-12 px-4 relative z-0">
@@ -69,9 +64,7 @@ const ReviewsCarousel = () => {
       </section>
 
       {/* ─── 2️⃣ CAROUSEL OUTSIDE BLUR, FLOATING ABOVE WAVE ──── */}
-      <section
-        className="container mx-auto px-4 -mt-12 md:-mt-16 relative z-20"
-      >
+      <section className="container mx-auto px-4 -mt-12 md:-mt-16 xl:px-24 relative z-20">
         <div className="overflow-hidden relative pt-3 pb-10" ref={emblaRef}>
           <div className="flex">
             {reviews.map((review, i) => {
@@ -107,7 +100,7 @@ const ReviewsCarousel = () => {
         {/* Arrows (desktop) */}
         <button
           onClick={scrollPrev}
-          className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0
+          className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 xl:left-24
                      bg-white/40 dark:bg-zinc-800/40 border p-2 rounded-full z-20"
           aria-label="Prev"
         >
@@ -115,7 +108,7 @@ const ReviewsCarousel = () => {
         </button>
         <button
           onClick={scrollNext}
-          className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-0
+          className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-0 xl:right-24
                      bg-white/40 dark:bg-zinc-800/40 border p-2 rounded-full z-20"
           aria-label="Next"
         >
@@ -124,16 +117,22 @@ const ReviewsCarousel = () => {
 
         {/* Arrows (mobile) */}
         <div className="flex md:hidden justify-center gap-4 z-20">
-          <button onClick={scrollPrev} className="p-2 rounded-full bg-white/40 dark:bg-zinc-800/40">
+          <button
+            onClick={scrollPrev}
+            className="p-2 rounded-full bg-white/40 dark:bg-zinc-800/40"
+          >
             <ChevronLeft className="w-5 h-5" />
           </button>
-          <button onClick={scrollNext} className="p-2 rounded-full bg-white/40 dark:bg-zinc-800/40">
+          <button
+            onClick={scrollNext}
+            className="p-2 rounded-full bg-white/40 dark:bg-zinc-800/40"
+          >
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>
       </section>
     </>
   );
-} 
+};
 
 export default ReviewsCarousel;

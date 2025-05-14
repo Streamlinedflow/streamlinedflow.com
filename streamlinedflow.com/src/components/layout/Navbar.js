@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import AnimatedSection from "./AnimatedSection";
-import ThemeToggle from "./ThemeToggle";
+import AnimatedSection from "../common/AnimatedSection";
+import ThemeToggle from "../common/ThemeToggle";
 import { Menu } from "lucide-react";
 import {
   Sheet,
