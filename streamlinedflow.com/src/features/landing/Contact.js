@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AnimatedSection from "../components/AnimatedSection";
+import AnimatedSection from "@/components/common/AnimatedSection";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +32,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setSubmitStatus({
         success: true,
@@ -58,22 +59,29 @@ const ContactForm = () => {
 
   return (
     <AnimatedSection delay={0.2} type="fadeUp" scrollTriggered={true}>
-      <section
-        id="contact"
-        className="container mx-auto py-16 px-4 bg-slate-100 dark:bg-transparent relative"
-      >
-        <div className="rounded-xl backdrop-blur-lg p-12 w-full">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl mb-12 text-center text-gray-900 dark:text-white leading-tight relative">
-              Contact Us
-            </h2>
-
-            <div className="rounded-xl backdrop-blur-lg border-2 border-transparent bg-white dark:bg-zinc-900 bg-clip-padding p-6 flex flex-col">
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base mb-6 max-w-2xl">
+      <>
+        {/* 1️⃣ Heading + blur-container (behind the wave) */}
+        <section
+          id="contact"
+          className="container mx-auto pt-36 px-4 bg-slate-100 dark:bg-transparent relative z-0"
+        >
+          <div className="rounded-xl backdrop-blur-lg py-12 w-full">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl mb-6 text-center text-gray-900 dark:text-white leading-tight">
+                Contact Us
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base max-w-2xl mx-auto">
                 Send us a message detailing your business needs, and we’ll get
                 back to you to discuss how we can help automate your workflows.
               </p>
+            </div>
+          </div>
+        </section>
 
+        {/* 2️⃣ Form (above the wave) */}
+        <section className="container mx-auto px-4  relative z-20 pb-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="rounded-xl backdrop-blur-lg border-2 border-transparent bg-white dark:bg-zinc-900 bg-clip-padding p-6 flex flex-col">
               {submitStatus.success === true && (
                 <div className="bg-blue-50 border border-blue-200 text-blue-800 p-4 rounded-lg mb-6 text-left">
                   {submitStatus.message}
@@ -180,8 +188,8 @@ const ContactForm = () => {
               </form>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </>
     </AnimatedSection>
   );
 };

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedSection from "@/components/common/AnimatedSection";
 
 export default function Hero() {
   return (
