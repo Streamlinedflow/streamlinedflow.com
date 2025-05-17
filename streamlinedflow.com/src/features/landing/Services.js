@@ -7,14 +7,14 @@ export default function Services() {
     <AnimatedSection delay={0.2} type="scaleUp" scrollTriggered>
       <>
         {/* Heading */}
-        <div className="rounded-xl backdrop-blur-lg w-full bg-slate-100 dark:bg-transparent relative z-0">
+        <div className="rounded-xl w-full relative z-20">
           <h2 className="text-4xl md:text-5xl mb-16 text-center text-gray-900 dark:text-white leading-tight">
             What Our Clients Get
           </h2>
         </div>
 
         {/* Service Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 relative z-20">
           <Link href="/services?service=autonomous-agent" className="block">
             <div className="rounded-xl backdrop-blur-lg border-2 border-transparent bg-white dark:bg-zinc-900 p-6 flex flex-col h-full cursor-pointer transition-transform duration-400 transform hover:scale-105 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/20">
               <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white inline-block">

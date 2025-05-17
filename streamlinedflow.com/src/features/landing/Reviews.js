@@ -59,14 +59,14 @@ export default function ReviewsCarousel() {
     <AnimatedSection delay={0.2} type="fadeUp" scrollTriggered>
       <>
         {/* Heading */}
-        <div className="rounded-xl backdrop-blur-lg mb-6 w-full relative z-0">
+        <div className="rounded-xl mb-6 w-full relative z-20">
           <h2 className="text-xl md:text-3xl text-center text-gray-900 dark:text-white leading-tight">
             Real Voices, Real Results
           </h2>
         </div>
 
         {/* Carousel Slides */}
-        <div className="-mx-8 overflow-hidden relative pt-4 pb-8" ref={emblaRef}>
+        <div className="-mx-8 overflow-hidden relative pt-4 pb-8 z-20" ref={emblaRef}>
           <div className="flex">
             {reviews.map((review, index) => {
               const isActive = index === activeIndex;

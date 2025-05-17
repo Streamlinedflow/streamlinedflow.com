@@ -32,7 +32,7 @@ export default function Home() {
             <Hero />
           </Section>
 
-          <Section>
+          <Section className="-mt-24" >
             <ReviewCarousel />
           </Section>
 
@@ -40,11 +40,11 @@ export default function Home() {
             <Services />
           </Section>
 
-          <Section>
+          <Section id="case-studies">
             <CaseStudies />
           </Section>
 
-          <Section>
+          <Section id="how-it-works">
             <HowItWorks />
           </Section>
 

@@ -30,14 +30,14 @@ export default function HowItWorks() {
     <AnimatedSection delay={0.2} type="scaleUp" scrollTriggered>
       <>
         {/* Heading */}
-        <div className="rounded-xl backdrop-blur-lg bg-slate-100 dark:bg-transparent">
+        <div className="relative z-20">
           <h2 className="text-4xl md:text-5xl mb-16 text-center text-gray-900 dark:text-white leading-tight">
             How We Deliver
           </h2>
         </div>
 
         {/* Steps Content */}
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-12 relative z-20">
           {steps.map((item, index) => (
             <div
               key={item.step}

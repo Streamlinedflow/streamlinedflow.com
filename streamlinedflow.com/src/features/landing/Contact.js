@@ -83,7 +83,7 @@ export default function ContactForm() {
     <AnimatedSection delay={0.2} type="fadeUp" scrollTriggered>
       <>
         {/* Heading */}
-        <div className="rounded-xl backdrop-blur-lg mb-16 bg-slate-100 dark:bg-transparent">
+        <div className="mb-16 relative z-20">
           <h2 className="text-4xl md:text-5xl mb-2 text-center text-gray-900 dark:text-white leading-tight">
             Contact Us
           </h2>
@@ -94,7 +94,7 @@ export default function ContactForm() {
         </div>
 
         {/* Form */}
-        <div className="rounded-xl backdrop-blur-lg border-2 border-transparent bg-white dark:bg-zinc-900 p-6 flex flex-col">
+        <div className="rounded-xl relative z-20 border-2 border-transparent bg-white dark:bg-zinc-900 p-6 flex flex-col">
           {submitStatus.success === true && (
             <div className="bg-blue-50 border border-blue-200 text-blue-800 p-4 rounded-lg text-left">
               {submitStatus.message}

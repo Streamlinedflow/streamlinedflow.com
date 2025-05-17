@@ -30,15 +30,14 @@ export default function CaseStudies() {
   return (
     <AnimatedSection delay={0.2} type="scaleUp" scrollTriggered>
       <>
-        {/* Heading */}
-        <div className="rounded-xl backdrop-blur-lg bg-slate-100 dark:bg-transparent">
+        <div className="rounded-xl">
           <h2 className="text-4xl md:text-5xl mb-16 text-center text-gray-900 dark:text-white leading-tight">
             Case Studies
           </h2>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="relative z-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {caseStudies.map((caseStudy, index) => (
             <Link
               key={index}
