@@ -1,18 +1,18 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import { Suspense } from "react";
-import AnimatedBackground from "@/components/common/AnimatedBackground";
-import AnimatedSection from "@/components/common/AnimatedSection";
-import ThemeToggle from "@/components/common/ThemeToggle";
-import { useTheme } from "@/context/ThemeContext";
-import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
-import CustomAgentService from "@/features/services/CustomAgent";
-import NextStepsCTA from "@/components/common/NextStepsCTA";
-import ChatbotDevelopmentService from "@/features/services/CustomChatbot";
-import Container from "@/components/layout/Container";
-import Section from "@/components/layout/Section";
+
+// Core/Layout
+import Navbar      from "@/components/layout/Navbar";
+import Footer      from "@/components/layout/Footer";
+import Container   from "@/components/layout/Container";
+import Section     from "@/components/layout/Section";
+
+// Service feature sections
+import CustomAgentService          from "@/features/services/CustomAgent";
+import ChatbotDevelopmentService   from "@/features/services/CustomChatbot";
+
+// Call-to-Action
+import NextStepsCTA                from "@/components/common/NextStepsCTA";
+
 
 export default function ServicesPage() {
   return (
