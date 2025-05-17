@@ -7,9 +7,10 @@ const ServicesCTA = () => {
     <AnimatedSection delay={0.2} type="fadeUp" scrollTriggered>
       <section
         id="cta"
-        className="container mx-auto pt-36 px-4 relative z-0"
+        className="container mx-auto :w
+        px-4 relative z-0"
       >
-        <div className="rounded-xl backdrop-blur-lg py-12 w-full">
+        <div className="rounded-xl backdrop-blur-lg py-6 w-full">
           <div className="max-w-4xl mx-auto text-center">
             <div className="accent-tag mb-4">
               <span
