@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import AnimatedSection from "@/components/common/AnimatedSection";
 
-/**
- * ContactForm component: content-only; outer Container/Section handle layout and spacing.
- */
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -28,13 +25,55 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate required selects
+    if (!formData.budget || !formData.services) {
+      setSubmitStatus({
+        success: false,
+        message: "Please select a budget and service option.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
+    setSubmitStatus({ success: null, message: "" });
+
     try {
-      await new Promise((res) => setTimeout(res, 2000));
-      setSubmitStatus({ success: true, message: "Your message has been sent successfully!" });
-      setFormData({ name: "", email: "", role: "", company: "", budget: "", services: "", message: "" });
-    } catch {
-      setSubmitStatus({ success: false, message: "There was an error sending your message. Please try again." });
+      const webhookUrl =
+        "https://hook.us2.make.com/tlfdnyalk8nvsujlwvx4dot37o8r39v9";
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          success: true,
+          message: "Thanks for your submission! We'll be in touch soon.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          role: "",
+          company: "",
+          budget: "",
+          services: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus({
+          success: false,
+          message:
+            "Something went wrong. Please try again or contact us directly.",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus({
+        success: false,
+        message: "Network error. Please try again or contact us directly.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -49,7 +88,8 @@ export default function ContactForm() {
             Contact Us
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm md:text-base text-center">
-            Send us a message detailing your business needs, and we’ll get back to you to discuss how we can help automate your workflows.
+            Send us a message detailing your business needs, and we’ll get back
+            to you to discuss how we can help automate your workflows.
           </p>
         </div>
 
@@ -152,7 +192,9 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`px-5 py-2.5 rounded-lg text-white bg-blue-600 shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all w-full font-medium ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
+              className={`px-5 py-2.5 rounded-lg text-white bg-blue-600 shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all w-full font-medium ${
+                isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+              }`}
             >
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>
