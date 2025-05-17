@@ -10,7 +10,7 @@ export default function CustomAgentService() {
         <h2 className="text-4xl md:text-6xl font-extrabold mb-4">
           Custom AI Agents
         </h2>
-        <p className="text-xl text-gray-700 dark:text-gray-300">
+        <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
           Transform your business processes with intelligent automations.
         </p>
       </div>

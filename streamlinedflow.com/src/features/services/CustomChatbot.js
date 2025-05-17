@@ -18,10 +18,10 @@ export default function ChatbotDevelopmentService() {
     <AnimatedSection delay={0.2} type="fadeUp">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-4xl md:text-6xl font-extrabold mb-6">
+        <h2 className="text-4xl md:text-6xl font-extrabold mb-4">
           Chatbot Development
         </h2>
-        <p className="text-xl text-gray-700 dark:text-gray-300">
+        <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
           Custom chatbot solutions that enhance customer experience and streamline support operations.
         </p>
       </div>

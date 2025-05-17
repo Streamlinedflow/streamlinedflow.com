@@ -5,15 +5,14 @@ import AnimatedSection from '@/components/common/AnimatedSection';
 export default function NextStepsCTA() {
   return (
     <AnimatedSection delay={0.2} type="fadeUp" scrollTriggered>
-      {/* CTA Wrapper */}
-      <div className="rounded-xl backdrop-blur-lg py-6">
+      <div>
         <div className="text-center">
           <div className="accent-tag mb-4">
-            <span className="font-semibold" style={{ color: 'var(--color-accent-2)' }}>
+            <span className="font-semibold">
               NEXT STEPS
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text hover-gradient-line">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 gradient-text hover-gradient-line">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">

@@ -29,9 +29,9 @@ export default function ServicesPage() {
             <ChatbotDevelopmentService />
           </Section>
 
-          <Section>
+          <div className="mt-32">
             <NextStepsCTA />
-          </Section>
+          </div>
 
           <Section>
             <Footer />

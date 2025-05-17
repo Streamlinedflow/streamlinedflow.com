@@ -43,7 +43,7 @@ export default function Navbar() {
     >
       <AnimatedSection delay={0} type="fadeIn">
         <div className="w-full px-2 sm:px-4 pt-2 overflow-visible">
-          <nav className="flex items-center justify-center lg:justify-between p-4 max-w-screen-xl mx-auto">
+          <nav className="flex items-center justify-center lg:justify-between p-4 mx-auto max-w-[90rem]">
             {/* Mobile Menu */}
             <Sheet>
               <SheetTrigger asChild>
@@ -118,7 +118,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex flex-1 justify-center space-x-8 mx-8">
+            <div className="hidden lg:flex flex-1 justify-center space-x-8 ">
               {links.map(({ href, label }) => (
                 <Link
                   key={href}

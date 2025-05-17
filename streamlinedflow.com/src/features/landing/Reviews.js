@@ -59,7 +59,7 @@ export default function ReviewsCarousel() {
     <AnimatedSection delay={0.2} type="fadeUp" scrollTriggered>
       <>
         {/* Heading */}
-        <div className="rounded-xl mb-6 w-full relative z-20">
+        <div className=" mb-6 w-full relative z-20">
           <h2 className="text-xl md:text-3xl text-center text-gray-900 dark:text-white leading-tight">
             Real Voices, Real Results
           </h2>

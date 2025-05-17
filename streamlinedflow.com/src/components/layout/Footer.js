@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <AnimatedSection delay={0.2} type="fadeIn" scrollTriggered={true}>
       <footer className="border-t border-gray-200 dark:border-zinc-300/15">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid md:grid-cols-12 gap-8 mb-12">
+        <div className="mx-auto px-4">
+          <div className="grid md:grid-cols-12 gap-8 my-6">
             {/* Logo Column */}
             <div className="md:col-span-4 space-y-4">
               <Link href="/" className="flex items-center space-x-3">

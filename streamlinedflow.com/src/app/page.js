@@ -6,20 +6,19 @@ import Footer from "@/components/layout/Footer";
 
 // Layout wrappers
 import Container from "@/components/layout/Container";
-import Section   from "@/components/layout/Section";
+import Section from "@/components/layout/Section";
 
 // Background canvas
 import WaveCanvas from "@/components/common/WaveCanvas";
 
 // Hero & feature sections
-import Hero            from "@/features/landing/Hero";
-import ReviewCarousel  from "@/features/landing/Reviews";
-import Services        from "@/features/landing/Services";
-import CaseStudies     from "@/features/landing/CaseStudies";
-import HowItWorks      from "@/features/landing/HowItWorks";
-import BookCall        from "@/features/landing/BookCall";
-import ContactForm     from "@/features/landing/Contact";
-
+import Hero from "@/features/landing/Hero";
+import ReviewCarousel from "@/features/landing/Reviews";
+import Services from "@/features/landing/Services";
+import CaseStudies from "@/features/landing/CaseStudies";
+import HowItWorks from "@/features/landing/HowItWorks";
+import BookCall from "@/features/landing/BookCall";
+import ContactForm from "@/features/landing/Contact";
 
 export default function Home() {
   return (
@@ -28,12 +27,14 @@ export default function Home() {
       <main>
         <WaveCanvas />
         <Container>
-          <Section className="pt-32">
-            <Hero />
-          </Section>
+          <Section className="h-screen flex flex-col">
+            <div className="basis-4/6 flex items-start justify-center pt-[3%]">
+              <Hero />
+            </div>
 
-          <Section className="-mt-24" >
-            <ReviewCarousel />
+            <div className="basis-2/6 flex items-center justify-center">
+              <ReviewCarousel />
+            </div>
           </Section>
 
           <Section>
@@ -52,7 +53,7 @@ export default function Home() {
             <BookCall />
           </Section>
 
-          <Section>
+          <Section id="contact">
             <ContactForm />
           </Section>
 
