@@ -12,6 +12,8 @@ import BookCall from "@/features/landing/BookCall";
 import ContactForm from "@/features/landing/Contact";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import Section from "@/components/layout/Section";
+import Container from "@/components/layout/Container";
 
 export default function Home() {
   const { isDarkMode } = useTheme();
@@ -195,23 +197,47 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 text-gray-950 dark:bg-zinc-950 dark:text-gray-50">
-      <Navbar /> 
+      <Navbar />
       <main>
-        <div className="relative z-0">
-          <canvas
-            id="waveCanvas"
-           className="fixed top-0 left-0 w-full h-full pointer-events-none z-10"
-            style={{ opacity: 0.9 }}
-          />
-          <Hero />
+        <canvas
+          id="waveCanvas"
+          className="fixed top-0 left-0 w-full h-full pointer-events-none z-10"
+          style={{ opacity: 0.9 }}
+        />
+
+        <Container>
+          <Section className="pt-32">
+            <Hero />
+          </Section>
+
+        <Section>
           <ReviewCarousel />
-          <Services />
-          <CaseStudies />
-          <HowItWorks />
-          <BookCall />
-          <ContactForm />
-          <Footer />
-        </div>
+        </Section>
+
+          <Section>
+            <Services />
+          </Section>
+
+          <Section>
+            <CaseStudies />
+          </Section>
+
+          <Section>
+            <HowItWorks />
+          </Section>
+
+          <Section>
+            <BookCall />
+          </Section>
+
+          <Section>
+            <ContactForm />
+          </Section>
+
+          <Section className="pb-32">
+            <Footer />
+          </Section>
+        </Container>
       </main>
     </div>
   );
