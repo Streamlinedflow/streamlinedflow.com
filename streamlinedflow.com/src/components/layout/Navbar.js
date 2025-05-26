@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/sheet";
 
 const links = [
-  { href: "/", label: "Home" },
+  { href: "/#home", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/#case-studies", label: "Case Studies" },
   { href: "/#how-it-works", label: "How It Works" },
@@ -33,6 +33,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -45,7 +51,7 @@ export default function Navbar() {
         <div className="w-full px-2 sm:px-4 pt-2 overflow-visible">
           <nav className="flex items-center justify-center lg:justify-between p-4 mx-auto max-w-[90rem]">
             {/* Mobile Menu */}
-            <Sheet>
+            <Sheet open={isOpen} onOpenChange={setIsOpen} >
               <SheetTrigger asChild>
                 <button
                   aria-label="Open menu"
@@ -60,7 +66,7 @@ export default function Navbar() {
               >
                 <SheetHeader className="p-6 border-b border-gray-200 dark:border-blue-500/15 flex justify-center">
                   <SheetTitle>
-                    <Link href="/" className="flex items-center space-x-2">
+                    <Link href="/#home" className="flex items-center space-x-2" onClick={handleLinkClick}>
                       <Image
                         src="/logo.svg"
                         alt="SL Flow Logo"
@@ -80,6 +86,7 @@ export default function Navbar() {
                       key={href}
                       href={href}
                       className="relative font-bold text-base dark:text-white hover:underline underline-offset-4"
+                      onClick={handleLinkClick}
                     >
                       {label}
                     </Link>
@@ -87,6 +94,7 @@ export default function Navbar() {
                   <Link
                     href="/#book-call"
                     className="px-5 py-2.5 rounded-lg font-medium text-white bg-gradient-to-r from-[#38b6ff] to-[#0080ff] shadow hover:from-[#0080ff] hover:to-[#38b6ff] transition-all w-full text-center"
+                    onClick={handleLinkClick}
                   >
                     Book a Call
                   </Link>
@@ -101,7 +109,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link
-              href="/"
+              href="/#home"
               className="flex-shrink-0 flex items-center md:space-x-2"
             >
               <Image

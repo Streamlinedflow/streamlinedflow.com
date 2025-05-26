@@ -22,12 +22,12 @@ import ContactForm from "@/features/landing/Contact";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-950 dark:bg-zinc-950 dark:text-gray-50">
+    <div className="min-h-screen bg-gray-100 text-gray-950 dark:bg-zinc-950 dark:text-gray-50" id="home">
       <Navbar />
       <main>
         <WaveCanvas />
         <Container>
-          <div className="flex flex-col min-h-screen pb-32 py-12">
+          <div className="flex flex-col min-h-screen pb-32 py-12"> 
             <div className="flex flex-1 items-center justify-center px-6 sm:px-12">
               <Hero />
             </div>
@@ -49,7 +49,7 @@ export default function Home() {
             <HowItWorks />
           </Section>
 
-          <Section>
+          <Section id="book-call">
             <BookCall />
           </Section>
 
