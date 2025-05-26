@@ -16,21 +16,25 @@ const reviews = [
     name: "Charlie Davis",
     review:
       "Our automated reporting system now runs flawlessly, saving us time and improving accuracy across the board.",
+    imgSrc: "/logo.svg", // Add your image path here
   },
   {
     name: "Danielle Brown",
     review:
-      "Superb team and great support. The AI automation was easy to implement and made a measurable impact within weeks.",
+      "Superb team and great support. The AI automation was easy to implement and made a measurable impact.",
+    imgSrc: "/logo.svg", // Add your image path here
   },
   {
     name: "Ethan Wilson",
     review:
       "A sleek, modern solution that's elevated our client communications and reporting to the next level.",
+    imgSrc: "/logo.svg", // Add your image path here
   },
   {
-    name: "Ethan Wilson",
+    name: "Sarah Johnson",
     review:
-      "A sleek, modern solution that's elevated our client communications and reporting to the next level.",
+      "The implementation was seamless and the results exceeded our expectations. Highly recommend!",
+    imgSrc: "/logo.svg", // Add your image path here
   },
 ];
 
@@ -55,19 +59,19 @@ export default function ReviewCarousel() {
         if (cardElement) {
           // Get the actual height of the card content
           const rect = cardElement.getBoundingClientRect();
-          setCardHeight(rect.height + 20); // Add some padding
+          setCardHeight(rect.height); // Reduced padding
         }
       };
 
       // Update height on mount and resize
       updateHeight();
-      window.addEventListener('resize', updateHeight);
-      
+      window.addEventListener("resize", updateHeight);
+
       // Use setTimeout to ensure content is fully rendered
       const timer = setTimeout(updateHeight, 100);
 
       return () => {
-        window.removeEventListener('resize', updateHeight);
+        window.removeEventListener("resize", updateHeight);
         clearTimeout(timer);
       };
     }
@@ -85,15 +89,11 @@ export default function ReviewCarousel() {
           align: "start",
           axis: isMobile ? "y" : "x",
         }}
-        plugins={[Autoplay({ delay: 8000 })]}
+        plugins={[Autoplay({ delay: 7000 })]}
         orientation={isMobile ? "vertical" : "horizontal"}
       >
-        <CarouselContent 
-          className={` ${
-            isMobile 
-              ? `` 
-              : "h-full"
-          }`}
+        <CarouselContent
+          className={isMobile ? "" : "h-full"}
           style={isMobile ? { height: `${cardHeight}px` } : {}}
         >
           {reviews.map((t, i) => (
@@ -101,16 +101,20 @@ export default function ReviewCarousel() {
               key={i}
               className={`${
                 isMobile
-                  ? "basis-full" // Changed from basis-1/4 to basis-full for mobile
+                  ? ""
                   : "basis-1/4 md:basis-1/2 lg:basis-1/3 px-4"
               }`}
-              ref={i === 0 ? cardRef : null} // Reference first card for height calculation
+              ref={i === 0 ? cardRef : null}
             >
-              <div className="flex flex-col pt-6 sm:p-6 h-full justify-between dark:bg-zinc-900 bg-gray-50 rounded-xl px-4 backdrop-blur-lg relative z-20">
-                <q className="text-gray-600 dark:text-gray-300 flex-1">
+              <div
+                className={`flex flex-col px-4 pt-4 pb-2 dark:bg-zinc-900 bg-gray-50 rounded-xl backdrop-blur-lg relative z-20 ${
+                  isMobile ? "justify-start" : "h-full justify-between"
+                }`}
+              >
+                <q className="text-gray-600 dark:text-gray-300 mb-3 md:flex-1">
                   {t.review}
                 </q>
-                <div className="mt-6 flex items-center gap-3">
+                <div className="flex items-center gap-3">
                   <Image
                     src={t.imgSrc || "/default-avatar.png"}
                     alt={t.name}
