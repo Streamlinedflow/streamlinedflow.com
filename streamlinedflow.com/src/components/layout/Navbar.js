@@ -1,57 +1,84 @@
 'use client'
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import AnimatedSection from "../common/AnimatedSection";
-import ThemeToggle from "../common/ThemeToggle";
-import { Menu } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
+import AnimatedSection from '../common/AnimatedSection';
+import ThemeToggle from '../common/ThemeToggle';
+import { Menu } from 'lucide-react';
 import {
   Sheet,
   SheetTrigger,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
+} from '@/components/ui/sheet';
 
+// Simple href array for all nav items
 const links = [
-  { href: "/#home", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/#case-studies", label: "Case Studies" },
-  { href: "/#how-it-works", label: "How It Works" },
-  { href: "/#contact", label: "Contact Us" },
+  { href: '/#home', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/#case-studies', label: 'Case Studies' },
+  { href: '/#how-it-works', label: 'How It Works' },
+  { href: '/#contact', label: 'Contact Us' },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleLinkClick = () => {
+  const handleLinkClick = (href) => {
     setIsOpen(false);
+    
+    // Handle hash navigation properly
+    if (href.startsWith('/#')) {
+      const hash = href.substring(1); // Remove the leading '/'
+      
+      if (pathname === '/') {
+        // Already on home page, just scroll to section
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // Navigate to home page first, then scroll to section
+        router.push('/');
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 500); // Longer delay to ensure page load
+      }
+    } else {
+      // Regular navigation
+      router.push(href);
+    }
   };
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-gray-100/70 dark:bg-zinc-950/70 backdrop-blur-md shadow-sm"
-          : "bg-gray-100 dark:bg-zinc-950"
+          ? 'bg-gray-100/70 dark:bg-zinc-950/70 backdrop-blur-md shadow-sm'
+          : 'bg-gray-100 dark:bg-zinc-950'
       }`}
     >
       <AnimatedSection delay={0} type="fadeIn">
         <div className="w-full px-2 sm:px-4 pt-2 overflow-visible">
           <nav className="flex items-center justify-center lg:justify-between p-4 mx-auto max-w-[90rem]">
             {/* Mobile Menu */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen} >
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <button
                   aria-label="Open menu"
@@ -66,7 +93,10 @@ export default function Navbar() {
               >
                 <SheetHeader className="p-6 border-b border-gray-200 dark:border-blue-500/15 flex justify-center">
                   <SheetTitle>
-                    <Link href="/#home" className="flex items-center space-x-2" onClick={handleLinkClick}>
+                    <button
+                      onClick={() => handleLinkClick('/#home')}
+                      className="flex items-center space-x-2"
+                    >
                       <Image
                         src="/logo.svg"
                         alt="SL Flow Logo"
@@ -77,27 +107,25 @@ export default function Navbar() {
                       <span className="text-lg font-bold text-gray-900 dark:text-white">
                         SL Flow
                       </span>
-                    </Link>
+                    </button>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="p-6 flex flex-col items-start space-y-4">
                   {links.map(({ href, label }) => (
-                    <Link
+                    <button
                       key={href}
-                      href={href}
-                      className="relative font-bold text-base dark:text-white hover:underline underline-offset-4"
-                      onClick={handleLinkClick}
+                      onClick={() => handleLinkClick(href)}
+                      className="relative font-bold text-base dark:text-white hover:underline underline-offset-4 text-left"
                     >
                       {label}
-                    </Link>
+                    </button>
                   ))}
-                  <Link
-                    href="/#book-call"
+                  <button
+                    onClick={() => handleLinkClick('/#book-call')}
                     className="px-5 py-2.5 rounded-lg font-medium text-white bg-gradient-to-r from-[#38b6ff] to-[#0080ff] shadow hover:from-[#0080ff] hover:to-[#38b6ff] transition-all w-full text-center"
-                    onClick={handleLinkClick}
                   >
                     Book a Call
-                  </Link>
+                  </button>
                 </div>
               </SheetContent>
             </Sheet>
@@ -126,7 +154,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex flex-1 justify-center space-x-8 ">
+            <div className="hidden lg:flex flex-1 justify-center space-x-8">
               {links.map(({ href, label }) => (
                 <Link
                   key={href}
@@ -154,4 +182,3 @@ export default function Navbar() {
     </header>
   );
 }
-

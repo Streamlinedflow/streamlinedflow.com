@@ -5,6 +5,7 @@ import Navbar      from "@/components/layout/Navbar";
 import Footer      from "@/components/layout/Footer";
 import Container   from "@/components/layout/Container";
 import Section     from "@/components/layout/Section";
+import WaveCanvas from "@/components/common/WaveCanvas";
 
 // Service feature sections
 import CustomAgentService          from "@/features/services/CustomAgent";
@@ -19,6 +20,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-gray-100 text-gray-950 dark:bg-zinc-950 dark:text-gray-50">
       <Navbar />
       <main className="min-h-screen">
+        <WaveCanvas/>
         <Container>
 
           <Section className="w-full max-w-6xl mx-auto">
