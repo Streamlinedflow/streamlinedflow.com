@@ -25,7 +25,7 @@ export default function CaseStudyCallAnalysis() {
       <CallAnalysisHero />
 
       <Container>
-        <Section className="pt-32">
+        <Section className="mt-32">
           <CallAnalysisChallengeSolution />
         </Section>
 
