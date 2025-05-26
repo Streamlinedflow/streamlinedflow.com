@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -34,44 +34,33 @@ const reviews = [
   },
 ];
 
-
-
 export default function ReviewCarousel() {
   const [isMobile, setIsMobile] = useState(false);
-  const wrapperRef = useRef(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 768px)");
     const handler = (e) => setIsMobile(e.matches);
     mq.addEventListener("change", handler);
-    handler(mq); // set initial
+    handler(mq);
     return () => mq.removeEventListener("change", handler);
   }, []);
 
   return (
-    <div
-      ref={wrapperRef}
-      className={`py-4 ${
-        isMobile
-          ? "h-[80vh] max-h-[500px]"  /* adjust as needed */
-          : ""
-      }`}
-    >
+    <div className="py-4">
       <h2 className="text-xl md:text-3xl text-center leading-tight text-gray-900 dark:text-white">
         Real Voices, Real Results
       </h2>
 
       <Carousel
-        className="h-full"
         opts={{
           loop: true,
           align: "start",
           axis: isMobile ? "y" : "x",
         }}
-        plugins={[Autoplay({ delay: 6000 })]}
+        plugins={[Autoplay({ delay: 8000 })]}
         orientation={isMobile ? "vertical" : "horizontal"}
       >
-        <CarouselContent className="h-[200px] md:h-full">
+        <CarouselContent className="h-[250px] md:h-full">
           {reviews.map((t, i) => (
             <CarouselItem
               key={i}
@@ -81,7 +70,7 @@ export default function ReviewCarousel() {
                   : "basis-1/4 md:basis-1/2 lg:basis-1/3"
               }`}
             >
-              <div className="flex flex-col p-6 h-full justify-between">
+              <div className="flex flex-col py-6 sm:p-6 h-full justify-between">
                 <q className="text-gray-600 dark:text-gray-300 flex-1">
                   {t.review}
                 </q>
@@ -102,8 +91,8 @@ export default function ReviewCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious/>
-        <CarouselNext />
+        <CarouselPrevious className="invisible sm:visible" />
+        <CarouselNext className="invisible sm:visible" />
       </Carousel>
     </div>
   );

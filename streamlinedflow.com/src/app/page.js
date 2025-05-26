@@ -27,15 +27,15 @@ export default function Home() {
       <main>
         <WaveCanvas />
         <Container>
-          <Section className="h-screen flex flex-col">
-            <div className="basis-4/6 flex items-start justify-center pt-[3%]">
+          <div className="flex flex-col min-h-screen pb-32 py-12">
+            <div className="flex flex-1 items-center justify-center px-6 sm:px-12">
               <Hero />
             </div>
 
-            <div className="basis-2/6 flex items-center justify-center">
+            <div className="py-12 px-6 sm:px-12 mx-auto sm:max-w-screen justify-self-end">
               <ReviewCarousel />
             </div>
-          </Section>
+          </div>
 
           <Section>
             <Services />

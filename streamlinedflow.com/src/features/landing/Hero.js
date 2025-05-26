@@ -8,15 +8,15 @@ export default function Hero() {
       <>
         {/* Mobile Layout */}
         <div className="flex flex-col items-center text-center md:hidden">
-          <h1 className="text-5xl mb-4 leading-tight tracking-tight">
+          <h1 className="text-6xl mb-4 leading-tight tracking-tight">
             Automate
           </h1>
           <div className="flex items-center justify-center mb-4">
-            <h1 className="text-5xl leading-tight tracking-tight italic bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text">
+            <h1 className="text-6xl leading-tight tracking-tight italic bg-gradient-to-r from-[#38b6ff] to-[#0066cc] text-transparent bg-clip-text">
               Streamline
             </h1>
           </div>
-          <h1 className="text-5xl mb-6 leading-tight tracking-tight">Scale</h1>
+          <h1 className="text-6xl mb-6 leading-tight tracking-tight">Scale</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-md">
             Unlock your business potential with custom AI solutions designed to
             automate your workflows and drive efficiency.
