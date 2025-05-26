@@ -87,7 +87,7 @@ export default function ReviewCarousel() {
   return (
     <div className="py-4 relative z-20">
       <h2 className="text-xl md:text-3xl text-center leading-tight text-gray-900 dark:text-white mb-4">
-        Real Voices, Real Results
+       What Our Clients Are Saying 
       </h2>
 
       <Carousel
