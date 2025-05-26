@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -25,17 +25,19 @@ const reviews = [
   {
     name: "Ethan Wilson",
     review:
-      "A sleek, modern solution that’s elevated our client communications and reporting to the next level.",
+      "A sleek, modern solution that's elevated our client communications and reporting to the next level.",
   },
   {
     name: "Ethan Wilson",
     review:
-      "A sleek, modern solution that’s elevated our client communications and reporting to the next level.",
+      "A sleek, modern solution that's elevated our client communications and reporting to the next level.",
   },
 ];
 
 export default function ReviewCarousel() {
   const [isMobile, setIsMobile] = useState(false);
+  const [cardHeight, setCardHeight] = useState(250);
+  const cardRef = useRef(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 768px)");
@@ -45,9 +47,35 @@ export default function ReviewCarousel() {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
+  // Dynamic height calculation for mobile
+  useEffect(() => {
+    if (isMobile && cardRef.current) {
+      const updateHeight = () => {
+        const cardElement = cardRef.current;
+        if (cardElement) {
+          // Get the actual height of the card content
+          const rect = cardElement.getBoundingClientRect();
+          setCardHeight(rect.height + 20); // Add some padding
+        }
+      };
+
+      // Update height on mount and resize
+      updateHeight();
+      window.addEventListener('resize', updateHeight);
+      
+      // Use setTimeout to ensure content is fully rendered
+      const timer = setTimeout(updateHeight, 100);
+
+      return () => {
+        window.removeEventListener('resize', updateHeight);
+        clearTimeout(timer);
+      };
+    }
+  }, [isMobile]);
+
   return (
-    <div className="py-4">
-      <h2 className="text-xl md:text-3xl text-center leading-tight text-gray-900 dark:text-white">
+    <div className="py-4 relative z-20">
+      <h2 className="text-xl md:text-3xl text-center leading-tight text-gray-900 dark:text-white mb-4">
         Real Voices, Real Results
       </h2>
 
@@ -60,17 +88,25 @@ export default function ReviewCarousel() {
         plugins={[Autoplay({ delay: 8000 })]}
         orientation={isMobile ? "vertical" : "horizontal"}
       >
-        <CarouselContent className="h-[250px] md:h-full">
+        <CarouselContent 
+          className={` ${
+            isMobile 
+              ? `` 
+              : "h-full"
+          }`}
+          style={isMobile ? { height: `${cardHeight}px` } : {}}
+        >
           {reviews.map((t, i) => (
             <CarouselItem
               key={i}
-              className={`px-4 ${
+              className={`${
                 isMobile
-                  ? "basis-1/4"
-                  : "basis-1/4 md:basis-1/2 lg:basis-1/3"
+                  ? "basis-full" // Changed from basis-1/4 to basis-full for mobile
+                  : "basis-1/4 md:basis-1/2 lg:basis-1/3 px-4"
               }`}
+              ref={i === 0 ? cardRef : null} // Reference first card for height calculation
             >
-              <div className="flex flex-col py-6 sm:p-6 h-full justify-between">
+              <div className="flex flex-col pt-6 sm:p-6 h-full justify-between dark:bg-zinc-900 bg-gray-50 rounded-xl px-4 backdrop-blur-lg relative z-20">
                 <q className="text-gray-600 dark:text-gray-300 flex-1">
                   {t.review}
                 </q>
