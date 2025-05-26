@@ -1,8 +1,15 @@
 "use client";
 
-import useEmblaCarousel from "embla-carousel-react";
-import { useEffect, useState, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const reviews = [
   {
@@ -27,112 +34,66 @@ const reviews = [
   },
 ];
 
-const ReviewsCarousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center",
-    loop: true,
-    skipSnaps: false,
-    inViewThreshold: 0.7,
-  });
-
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    const index = emblaApi.selectedScrollSnap();
-    setActiveIndex(index);
-  }, [emblaApi]);
+export default function ReviewCarousel() {
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if (!emblaApi) return;
-    emblaApi.on("select", onSelect);
-    onSelect();
-  }, [emblaApi, onSelect]);
-
-  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
-  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+    const mq = window.matchMedia("(max-width: 768px)");
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    handler(mq);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   return (
-    <>
-      {/* ─── 1️⃣ HEADING + BLUR ─────────────────────────────── */}
-      <section className="container mx-auto pt-16 pb-12 px-4 relative z-0">
-        <div className="rounded-xl backdrop-blur-lg p-6 md:p-12 w-full">
-          <h2 className="text-xl md:text-3xl text-center text-gray-900 dark:text-white leading-tight">
-            Real Voices, Real Results
-          </h2>
-        </div>
-      </section>
+    <div className="py-4">
+      <h2 className="text-xl md:text-3xl text-center leading-tight text-gray-900 dark:text-white">
+        Real Voices, Real Results
+      </h2>
 
-      {/* ─── 2️⃣ CAROUSEL OUTSIDE BLUR, FLOATING ABOVE WAVE ──── */}
-      <section className="container mx-auto px-4 -mt-12 md:-mt-16 xl:px-24 relative z-20">
-        <div className="overflow-hidden relative pt-3 pb-10" ref={emblaRef}>
-          <div className="flex">
-            {reviews.map((review, i) => {
-              const isActive = i === activeIndex;
-              return (
-                <div
-                  key={i}
-                  className="min-w-full md:min-w-[33.3333%] px-4 flex justify-center"
-                >
-                  <div
-                    className={`rounded-xl backdrop-blur-lg border-2 border-transparent
-                      bg-white dark:bg-zinc-900 p-6 flex flex-col w-full max-w-sm
-                      transition-transform duration-500 ${
-                        isActive
-                          ? "scale-100 md:scale-105 border-blue-400 shadow-lg opacity-100"
-                          : "scale-100 md:scale-90 opacity-60"
-                      }`}
-                  >
-                    <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
-                      {review.name}
-                      <span className="block h-1 w-12 bg-gradient-to-r from-sky-500 to-blue-600 mt-2 rounded-full"></span>
-                    </h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base leading-relaxed">
-                      {review.review}
-                    </p>
-                  </div>
+      <Carousel
+        opts={{
+          loop: true,
+          align: "start",
+          axis: isMobile ? "y" : "x",
+        }}
+        plugins={[Autoplay({ delay: 8000 })]}
+        orientation={isMobile ? "vertical" : "horizontal"}
+      >
+        <CarouselContent className="h-[250px] md:h-full">
+          {reviews.map((t, i) => (
+            <CarouselItem
+              key={i}
+              className={`px-4 ${
+                isMobile
+                  ? "basis-1/4"
+                  : "basis-1/4 md:basis-1/2 lg:basis-1/3"
+              }`}
+            >
+              <div className="flex flex-col py-6 sm:p-6 h-full justify-between">
+                <q className="text-gray-600 dark:text-gray-300 flex-1">
+                  {t.review}
+                </q>
+                <div className="mt-6 flex items-center gap-3">
+                  <Image
+                    src={t.imgSrc || "/default-avatar.png"}
+                    alt={t.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
+                    loading="lazy"
+                  />
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                    {t.name}
+                  </p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Arrows (desktop) */}
-        <button
-          onClick={scrollPrev}
-          className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 xl:left-24
-                     bg-white/40 dark:bg-zinc-800/40 border p-2 rounded-full z-20"
-          aria-label="Prev"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <button
-          onClick={scrollNext}
-          className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-0 xl:right-24
-                     bg-white/40 dark:bg-zinc-800/40 border p-2 rounded-full z-20"
-          aria-label="Next"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-
-        {/* Arrows (mobile) */}
-        <div className="flex md:hidden justify-center gap-4 z-20">
-          <button
-            onClick={scrollPrev}
-            className="p-2 rounded-full bg-white/40 dark:bg-zinc-800/40"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={scrollNext}
-            className="p-2 rounded-full bg-white/40 dark:bg-zinc-800/40"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
-      </section>
-    </>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="invisible sm:visible" />
+        <CarouselNext className="invisible sm:visible" />
+      </Carousel>
+    </div>
   );
-};
-
-export default ReviewsCarousel;
+}

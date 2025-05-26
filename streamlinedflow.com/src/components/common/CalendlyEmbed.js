@@ -25,7 +25,7 @@ export default function CalendlyEmbed() {
     // Create new container
     const widgetDiv = document.createElement('div');
     widgetDiv.className = 'calendly-inline-widget';
-    widgetDiv.style.minWidth = '320px';
+    widgetDiv.style.minWidth = '100%';
     widgetDiv.style.height = '700px';
     widgetDiv.setAttribute('data-url', calendlyUrl);
     
