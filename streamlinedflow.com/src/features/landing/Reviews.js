@@ -13,35 +13,47 @@ import {
 
 const reviews = [
   {
-    name: "Charlie Davis",
+    name: "Vytas Mikulenas, Leansales.tech",
     review:
-      "Our automated reporting system now runs flawlessly, saving us time and improving accuracy across the board.",
-    imgSrc: "/logo.svg", // Add your image path here
+      '"Fast work, great communication, problem understood well and solved."',
+    imgSrc: "/vytas_m.png",
   },
   {
-    name: "Danielle Brown",
-    review:
-      "Superb team and great support. The AI automation was easy to implement and made a measurable impact.",
-    imgSrc: "/logo.svg", // Add your image path here
+    name: "coming soon...",
+    review: "",
+    imgSrc: "/logo.svg",
   },
   {
-    name: "Ethan Wilson",
-    review:
-      "A sleek, modern solution that's elevated our client communications and reporting to the next level.",
-    imgSrc: "/logo.svg", // Add your image path here
+    name: "coming soon...",
+    review: "",
+    imgSrc: "/logo.svg",
   },
   {
-    name: "Sarah Johnson",
-    review:
-      "The implementation was seamless and the results exceeded our expectations. Highly recommend!",
-    imgSrc: "/logo.svg", // Add your image path here
+    name: "coming soon...",
+    review: "",
+    imgSrc: "/logo.svg",
+  },
+  {
+    name: "coming soon...",
+    review: "",
+    imgSrc: "/logo.svg",
+  },
+  {
+    name: "coming soon...",
+    review: "",
+    imgSrc: "/logo.svg",
+  },
+  {
+    name: "coming soon...",
+    review: "",
+    imgSrc: "/logo.svg",
   },
 ];
 
 export default function ReviewCarousel() {
   const [isMobile, setIsMobile] = useState(false);
   const [cardHeight, setCardHeight] = useState(250);
-  const cardRef = useRef(null);
+  const cardContentRef = useRef(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 768px)");
@@ -51,30 +63,25 @@ export default function ReviewCarousel() {
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  // Dynamic height calculation for mobile
+  // measure only the inner card content on mobile
   useEffect(() => {
-    if (isMobile && cardRef.current) {
-      const updateHeight = () => {
-        const cardElement = cardRef.current;
-        if (cardElement) {
-          // Get the actual height of the card content
-          const rect = cardElement.getBoundingClientRect();
-          setCardHeight(rect.height); // Reduced padding
-        }
-      };
+    if (!isMobile) return;
 
-      // Update height on mount and resize
-      updateHeight();
-      window.addEventListener("resize", updateHeight);
+    const updateHeight = () => {
+      const el = cardContentRef.current;
+      if (el) {
+        setCardHeight(el.offsetHeight + 20);
+      }
+    };
 
-      // Use setTimeout to ensure content is fully rendered
-      const timer = setTimeout(updateHeight, 100);
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    const timer = setTimeout(updateHeight, 100);
 
-      return () => {
-        window.removeEventListener("resize", updateHeight);
-        clearTimeout(timer);
-      };
-    }
+    return () => {
+      window.removeEventListener("resize", updateHeight);
+      clearTimeout(timer);
+    };
   }, [isMobile]);
 
   return (
@@ -84,12 +91,8 @@ export default function ReviewCarousel() {
       </h2>
 
       <Carousel
-        opts={{
-          loop: true,
-          align: "start",
-          axis: isMobile ? "y" : "x",
-        }}
-        plugins={[Autoplay({ delay: 7000 })]}
+        opts={{ loop: true, align: "start", axis: isMobile ? "y" : "x" }}
+        plugins={[Autoplay({ delay: 8000 })]}
         orientation={isMobile ? "vertical" : "horizontal"}
       >
         <CarouselContent
@@ -100,20 +103,19 @@ export default function ReviewCarousel() {
             <CarouselItem
               key={i}
               className={`${
-                isMobile
-                  ? ""
-                  : "basis-1/4 md:basis-1/2 lg:basis-1/3 px-4"
+                isMobile ? "" : "basis-1/4 md:basis-1/2 lg:basis-1/3 px-4"
               }`}
-              ref={i === 0 ? cardRef : null}
             >
+              {/* measure this exact div */}
               <div
-                className={`flex flex-col px-4 pt-4 pb-2 dark:bg-zinc-900 bg-gray-50 rounded-xl backdrop-blur-lg relative z-20 ${
+                ref={i === 0 ? cardContentRef : null}
+                className={`flex flex-col px-4 pt-4 pb-2 dark:bg-zinc-900 bg-white rounded-xl backdrop-blur-lg relative z-20 ${
                   isMobile ? "justify-start" : "h-full justify-between"
                 }`}
               >
-                <q className="text-gray-600 dark:text-gray-300 mb-3 md:flex-1">
+                <p className="text-black dark:text-white mb-3 md:flex-1">
                   {t.review}
-                </q>
+                </p>
                 <div className="flex items-center gap-3">
                   <Image
                     src={t.imgSrc || "/default-avatar.png"}
@@ -123,7 +125,7 @@ export default function ReviewCarousel() {
                     className="rounded-full"
                     loading="lazy"
                   />
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                     {t.name}
                   </p>
                 </div>
@@ -131,8 +133,9 @@ export default function ReviewCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="invisible sm:visible" />
-        <CarouselNext className="invisible sm:visible" />
+
+        <CarouselPrevious className={isMobile ? "invisible" : ""} />
+        <CarouselNext className={isMobile ? "invisible" : ""} />
       </Carousel>
     </div>
   );

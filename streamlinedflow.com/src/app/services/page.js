@@ -21,11 +21,11 @@ export default function ServicesPage() {
       <main className="min-h-screen">
         <Container>
 
-          <Section>
+          <Section className="w-full max-w-6xl mx-auto">
             <CustomAgentService />
           </Section>
 
-          <Section>
+          <Section className="w-full max-w-6xl mx-auto">
             <ChatbotDevelopmentService />
           </Section>
 
