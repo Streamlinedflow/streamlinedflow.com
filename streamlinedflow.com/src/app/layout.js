@@ -1,8 +1,15 @@
 import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
+import { Sora } from 'next/font/google';
+import { Quicksand } from 'next/font/google';
+
 import './globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 
 const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({ subsets: ['latin'], weight: ['300'] });
+const sora = Sora({ subsets: ['latin'], weight: ['300'] });
+const quicksand = Quicksand({ subsets: ['latin'], weight: ['300'] });
 
 export const metadata = {
   title: 'StreamlinedFlow - Custom AI Automated Solutions',
