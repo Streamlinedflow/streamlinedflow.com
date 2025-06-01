@@ -40,7 +40,7 @@ export default function ContactForm() {
 
     try {
       const webhookUrl =
-        "https://hook.us2.make.com/tlfdnyalk8nvsujlwvx4dot37o8r39v9";
+        "https://services.leadconnectorhq.com/hooks/6M6Gwu5h5WjdQMJ4vlgU/webhook-trigger/3f04e54d-9e7d-4e0e-a41a-266c2257e5f1";
       const response = await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
